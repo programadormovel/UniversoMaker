@@ -22,7 +22,11 @@
   }
   
   .card {
-    @apply bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300;
+    @apply bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 backdrop-blur-sm;
+  }
+  
+  .card-hover {
+    @apply transform hover:scale-105 transition-all duration-300;
   }
   
   .input-field {
