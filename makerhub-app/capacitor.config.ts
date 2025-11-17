@@ -9,9 +9,25 @@ const config: CapacitorConfig = {
   },
   plugins: {
     SplashScreen: {
-      launchShowDuration: 2000,
+      launchShowDuration: 0,
+      launchAutoHide: false,
       backgroundColor: "#ffffff",
+      androidSplashResourceName: "splash_screen",
+      androidScaleType: "CENTER_CROP",
       showSpinner: false
+    },
+    Camera: {
+      permissions: ['camera', 'photos']
+    },
+    Geolocation: {
+      permissions: ['location']
+    },
+    LocalNotifications: {
+      smallIcon: "ic_stat_icon_config_sample",
+      iconColor: "#488AFF"
+    },
+    PushNotifications: {
+      presentationOptions: ["badge", "sound", "alert"]
     }
   }
 };

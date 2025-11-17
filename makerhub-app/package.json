@@ -10,14 +10,21 @@
     "preview": "vite preview",
     "type-check": "tsc --noEmit",
     "build:mobile": "npm run build && npx cap sync",
+    "build:android": "npm run build && npx cap sync android && npx cap open android",
     "android": "npx cap open android",
     "ios": "npx cap open ios"
   },
   "dependencies": {
     "@capacitor/android": "^7.4.4",
+    "@capacitor/camera": "^7.0.2",
     "@capacitor/cli": "^7.4.4",
     "@capacitor/core": "^7.4.4",
+    "@capacitor/filesystem": "^7.1.4",
+    "@capacitor/geolocation": "^7.1.5",
     "@capacitor/ios": "^7.4.4",
+    "@capacitor/local-notifications": "^7.0.3",
+    "@capacitor/push-notifications": "^7.0.3",
+    "@capacitor/splash-screen": "^7.0.3",
     "@types/node": "^24.10.1",
     "axios": "^1.13.1",
     "bootstrap": "^5.3.8",
@@ -39,6 +46,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.22",
     "globals": "^16.4.0",
+    "terser": "^5.44.1",
     "vite": "^7.1.7"
   }
 }

@@ -92,6 +92,56 @@ body {
   .container { max-width: 1320px; }
 }
 
+/* Full width responsive layout */
+.navbar {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.container-fluid {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+body, html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Optimized for 5+ inch screens */
+.container-fluid {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Touch-friendly sizing for 5+ inch screens */
+.btn {
+  min-height: 44px;
+  font-size: 16px;
+}
+
+.form-control, .form-select {
+  min-height: 44px;
+  font-size: 16px;
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+}
+
 /* Responsive font sizes */
 .fs-7 { font-size: 0.875rem; }
 .fs-6 { font-size: 1rem; }

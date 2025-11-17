@@ -70,50 +70,51 @@ function App() {
 
   return (
     <>
-      <Navbar bg="primary" variant="dark" className="mb-2 py-2">
-        <Container fluid className="px-2 px-sm-3">
+      <Navbar bg="primary" variant="dark" className="mb-2 py-2" expand="lg">
+        <Container fluid className="px-3">
           <Navbar.Brand className="d-flex align-items-center gap-2">
             <img 
               src={logo} 
               alt="Universo Maker" 
               style={{ height: '32px', width: '32px', objectFit: 'cover', borderRadius: '4px' }}
             />
-            <span className="fs-6 fs-sm-5 fs-md-4">Universo Maker</span>
+            <span className="fs-5">Universo Maker</span>
           </Navbar.Brand>
+          
           <Button 
             variant="outline-light" 
-            size="sm" 
-            className="d-flex align-items-center gap-1"
+            className="d-flex align-items-center gap-2"
             onClick={() => navigate('/dashboard')}
           >
-            <span className="d-none d-sm-inline">📈</span>
-            <span className="fs-7 fs-sm-6">Dashboard</span>
+            <span>📈</span>
+            <span>Dashboard</span>
           </Button>
         </Container>
       </Navbar>
       
-      <Container fluid className="px-1 px-sm-2 px-md-3">
-        <div className="row justify-content-center">
-          <div className="col-12 col-md-10 col-lg-8 col-xl-6">
+      <div style={{ marginTop: '70px' }}>
+        <Container fluid className="px-2 px-md-3" style={{ maxWidth: '100%', width: '100%' }}>
+          <div className="row w-100 mx-0">
+            <div className="col-12 px-2">
             {showSuccess && (
               <Alert variant="success" dismissible onClose={() => setShowSuccess(false)}>
                 Avaliação salva com sucesso!
               </Alert>
             )}
             
-            <div className="row g-2 mb-3">
-              <div className="col-12 col-sm-8 col-md-9">
+            <div className="row g-2 mb-3 w-100 mx-0">
+              <div className="col-9 px-1">
                 <StudentSelector
                   students={studentList}
                   selectedStudent={selectedStudent}
                   onStudentChange={setSelectedStudent}
                 />
               </div>
-              <div className="col-12 col-sm-4 col-md-3">
-                <div className="d-grid">
+              <div className="col-3 px-1">
+                <div className="d-grid h-100">
                   <Button 
                     variant="outline-primary" 
-                    size="sm"
+                    className="w-100 h-100 d-flex align-items-center justify-content-center"
                     onClick={() => setShowStudentForm(true)}
                   >
                     + Aluno
@@ -129,14 +130,14 @@ function App() {
             />
             
             {selectedStudent && (
-              <div className="row g-3">
-                <div className="col-12">
+              <div className="row g-2 g-sm-3 w-100 mx-0">
+                <div className="col-12 px-1">
                   <EvaluationForm
                     studentId={selectedStudent}
                     onSave={handleSaveEvaluation}
                   />
                 </div>
-                <div className="col-12">
+                <div className="col-12 px-1">
                   <EvaluationHistory evaluations={studentEvaluations} />
                 </div>
               </div>
@@ -152,9 +153,10 @@ function App() {
               style={{ height: '80px', opacity: 0.7 }}
               className="d-block mx-auto"
             />
+            </div>
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </>
   )
 }
