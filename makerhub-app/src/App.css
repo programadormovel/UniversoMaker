@@ -1,0 +1,149 @@
+/* Fully responsive design for all screen sizes */
+body {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Container responsive behavior */
+.container {
+  max-width: 100%;
+}
+
+/* Touch-friendly elements */
+.btn {
+  min-height: 44px;
+  font-size: 14px;
+}
+
+.form-control, .form-select {
+  min-height: 38px;
+  font-size: 14px;
+}
+
+/* Range slider responsive */
+.form-range {
+  height: 1.5rem;
+}
+
+.form-range::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.form-range::-moz-range-thumb {
+  cursor: pointer;
+}
+
+/* Card responsive spacing */
+.card {
+  margin-bottom: 0.5rem;
+}
+
+/* Badge responsive sizing */
+.badge {
+  font-size: 0.7em;
+  padding: 0.25em 0.4em;
+}
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  body { font-size: 13px; }
+  .navbar-brand { font-size: 1rem !important; }
+  .card-header h6 { font-size: 0.9rem; }
+  .form-label { font-size: 0.85rem; }
+  small { font-size: 0.75rem; }
+  .btn { font-size: 13px; }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  body { font-size: 14px; }
+  .navbar-brand { font-size: 1.1rem !important; }
+  .btn { min-height: 40px; }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  body { font-size: 15px; }
+  .navbar-brand { font-size: 1.25rem !important; }
+  .card { margin-bottom: 1rem; }
+  .badge { font-size: 0.75em; }
+  .form-range { height: 1.75rem; }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  body { font-size: 16px; }
+  .navbar-brand { font-size: 1.5rem !important; }
+  .card { margin-bottom: 1.5rem; }
+  .form-range { height: 2rem; }
+  .form-range::-webkit-slider-thumb { width: 24px; height: 24px; }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container { max-width: 1140px; }
+  .card { margin-bottom: 2rem; }
+}
+
+/* Ultra wide screens (1400px and up) */
+@media (min-width: 1400px) {
+  .container { max-width: 1320px; }
+}
+
+/* Responsive font sizes */
+.fs-7 { font-size: 0.875rem; }
+.fs-6 { font-size: 1rem; }
+
+/* Responsive layout improvements */
+@media (max-width: 991.98px) {
+  .row.g-3 > .col-12:first-child {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Button responsive improvements */
+@media (max-width: 575.98px) {
+  .btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Component spacing */
+.card + .card {
+  margin-top: 1rem;
+}
+
+/* Responsive grid improvements */
+@media (max-width: 575.98px) {
+  .card + .card {
+    margin-top: 0.75rem;
+  }
+  
+  .container-fluid {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .row.g-2 {
+    --bs-gutter-x: 0.5rem;
+    --bs-gutter-y: 0.5rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .row.g-3 {
+    --bs-gutter-x: 1rem;
+    --bs-gutter-y: 1rem;
+  }
+}
+
+/* Center content with max-width */
+@media (min-width: 1200px) {
+  .container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,24 @@
+Tarefas
+
+[] Modelagem do banco de dados - 10h
+	[] - Aluno, Responsavel, Terapeuta, Avaliacao
+[] Prototipação das telas - 12h
+	[] - Cadastro e Avaliacao
+[] Estruturar backend e web - 6h
+[] Criar cartões no Trello com tarefas
+[] Registro de domínio: universomaker.com.br 
+[] Criar app e subir na play store e apple store 
+[] Definir local para subir o backend 
+[] MVP do cadastro do aluno 
+
+
+Novembro 	- contrato
+Janeiro 	- montagem do espaço físico
+Fevereiro - biometria dos alunos para cadastro
+	    cadastro dos laudos no sistema
+	    terapeuta realiza anaminese dos alunos para diagnóstico
+	    responsável acessa o aplicativo para acompanhar aluno
+	    chatbot - interação terapeuta x aluno
+
+Assinco - plataforma de cadastro de alunos
+	  Fornecer API (endpoint) do cadastro dos alunos para integração com aplicativo Universo Maker.
