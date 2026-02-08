@@ -24,7 +24,17 @@ function App() {
   useEffect(() => {
     const loadStudents = async () => {
       const data = await fetchStudents();
-      setStudentList(data);
+      if (data.length === 0) {
+        const dummyStudent: Student = {
+          id: 'dummy-001',
+          name: 'Dummy',
+          age: 10,
+          diagnosis: 'Teste'
+        };
+        setStudentList([dummyStudent]);
+      } else {
+        setStudentList(data);
+      }
     };
     loadStudents();
 

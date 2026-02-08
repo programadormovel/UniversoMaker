@@ -104,16 +104,15 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
     e.preventDefault();
     
     if (!evaluation.professional || !evaluation.activityName) {
-      alert('Preencha os campos obrigatórios: Profissional Responsável e Nome da Atividade');
+      alert('Preencha os campos obrigatÃ³rios: Profissional ResponsÃ¡vel e Nome da Atividade');
       return;
     }
     
-    console.log('Salvando avaliação:', { studentId, ...evaluation });
+    console.log('Salvando avaliaÃ§Ã£o:', { studentId, ...evaluation });
     onSave({
       studentId,
       ...evaluation
     });
-    // Reset form
     setEvaluation({
       date: new Date().toISOString().split('T')[0],
       professional: '',
@@ -160,14 +159,12 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
     }));
   };
 
-
-
   return (
     <Card className="border-0 shadow-sm">
       <Card.Header className="bg-light py-2">
         <div className="d-flex justify-content-between align-items-center">
           <h6 className="mb-0">
-            {editingEvaluation ? 'Editando Avaliação' : 'Nova Avaliação'} - Sala Maker
+            {editingEvaluation ? 'Editando AvaliaÃ§Ã£o' : 'Nova AvaliaÃ§Ã£o'} - Sala Maker
           </h6>
           <Form.Control
             type="date"
@@ -182,12 +179,11 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
         <Form onSubmit={handleSubmit}>
           <Accordion defaultActiveKey="0">
             
-            {/* Identificação */}
             <Accordion.Item eventKey="0">
-              <Accordion.Header>1. Identificação</Accordion.Header>
+              <Accordion.Header>1. IdentificaÃ§Ã£o</Accordion.Header>
               <Accordion.Body>
                 <Form.Group className="mb-2">
-                  <Form.Label className="small fw-bold">Profissional Responsável</Form.Label>
+                  <Form.Label className="small fw-bold">Profissional ResponsÃ¡vel</Form.Label>
                   <Form.Select
                     size="sm"
                     value={evaluation.professional}
@@ -206,7 +202,6 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
               </Accordion.Body>
             </Accordion.Item>
 
-            {/* Atividade */}
             <Accordion.Item eventKey="1">
               <Accordion.Header>2. Atividade Realizada</Accordion.Header>
               <Accordion.Body>
@@ -237,7 +232,7 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
                   <Col xs={12}>
                     <Form.Label className="small fw-bold">Etapas Envolvidas</Form.Label>
                     <div className="d-flex flex-wrap gap-2">
-                      {['Planejamento', 'Montagem', 'Testes', 'Programação', 'Correções', 'Apresentação'].map(step => (
+                      {['Planejamento', 'Montagem', 'Testes', 'ProgramaÃ§Ã£o', 'CorreÃ§Ãµes', 'ApresentaÃ§Ã£o'].map(step => (
                         <Form.Check
                           key={step}
                           type="checkbox"
@@ -251,11 +246,11 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
                   </Col>
                   <Col xs={12}>
                     <Form.Group className="mb-2">
-                      <Form.Label className="small fw-bold">Nível de Complexidade</Form.Label>
+                      <Form.Label className="small fw-bold">NÃ­vel de Complexidade</Form.Label>
                       <div className="d-flex gap-3">
                         {[
                           { value: 'baixo', label: 'Baixo' },
-                          { value: 'medio', label: 'Médio' },
+                          { value: 'medio', label: 'MÃ©dio' },
                           { value: 'alto', label: 'Alto' }
                         ].map(option => (
                           <Form.Check
@@ -275,29 +270,28 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
               </Accordion.Body>
             </Accordion.Item>
 
-            {/* Comportamento */}
             <Accordion.Item eventKey="2">
-              <Accordion.Header>3. Observação do Comportamento</Accordion.Header>
+              <Accordion.Header>3. ObservaÃ§Ã£o do Comportamento</Accordion.Header>
               <Accordion.Body>
                 <Row className="g-2">
                   <Col xs={12}>
                     <Form.Group className="mb-2">
-                      <Form.Label className="small fw-bold">Regulação Emocional</Form.Label>
+                      <Form.Label className="small fw-bold">RegulaÃ§Ã£o Emocional</Form.Label>
                       <Form.Select
                         size="sm"
                         value={evaluation.emotionalRegulation}
                         onChange={(e) => setEvaluation(prev => ({ ...prev, emotionalRegulation: e.target.value as any }))}
                       >
                         <option value="regulado">Regulado</option>
-                        <option value="pequena_frustracao">Pequena frustração, recuperou com apoio</option>
-                        <option value="frustracao_moderada">Frustração moderada</option>
+                        <option value="pequena_frustracao">Pequena frustraÃ§Ã£o, recuperou com apoio</option>
+                        <option value="frustracao_moderada">FrustraÃ§Ã£o moderada</option>
                         <option value="abandono">Abandono da tarefa / crise</option>
                       </Form.Select>
                     </Form.Group>
                     <Form.Group className="mb-2">
-                      <Form.Label className="small fw-bold">Estratégias que Ajudaram</Form.Label>
+                      <Form.Label className="small fw-bold">EstratÃ©gias que Ajudaram</Form.Label>
                       <div className="d-flex flex-wrap gap-1 mb-2 p-2 border rounded bg-light">
-                        {['Pausas', 'Respiração', 'Apoio verbal', 'Modelagem', 'Reforço positivo', 'Redução de estímulos', 'Tempo extra', 'Apoio visual', 'Rotina clara', 'Antecipação', 'Escolha', 'Movimento'].map(strategy => (
+                        {['Pausas', 'RespiraÃ§Ã£o', 'Apoio verbal', 'Modelagem', 'ReforÃ§o positivo', 'ReduÃ§Ã£o de estÃ­mulos', 'Tempo extra', 'Apoio visual', 'Rotina clara', 'AntecipaÃ§Ã£o', 'Escolha', 'Movimento'].map(strategy => (
                           <span
                             key={strategy}
                             onClick={() => {
@@ -316,13 +310,13 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
                         size="sm"
                         value={evaluation.emotionalStrategies}
                         onChange={(e) => setEvaluation(prev => ({ ...prev, emotionalStrategies: e.target.value }))}
-                        placeholder="Clique nas estratégias acima ou digite outras..."
+                        placeholder="Clique nas estratÃ©gias acima ou digite outras..."
                       />
                     </Form.Group>
                   </Col>
                   <Col xs={12}>
                     <Form.Group className="mb-2">
-                      <Form.Label className="small fw-bold">Interação Social</Form.Label>
+                      <Form.Label className="small fw-bold">InteraÃ§Ã£o Social</Form.Label>
                       <Form.Select
                         size="sm"
                         value={evaluation.socialInteraction}
@@ -330,7 +324,7 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
                       >
                         <option value="sozinho">Trabalhou sozinho</option>
                         <option value="dupla">Aceitou trabalhar em dupla</option>
-                        <option value="mediacao_constante">Necessitou mediação constante</option>
+                        <option value="mediacao_constante">Necessitou mediaÃ§Ã£o constante</option>
                         <option value="compartilhou">Compartilhou materiais espontaneamente</option>
                         <option value="conflitos">Teve conflitos</option>
                       </Form.Select>
@@ -350,16 +344,15 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
               </Accordion.Body>
             </Accordion.Item>
 
-            {/* Síntese */}
             <Accordion.Item eventKey="3">
-              <Accordion.Header>4. Síntese Final</Accordion.Header>
+              <Accordion.Header>4. SÃ­ntese Final</Accordion.Header>
               <Accordion.Body>
                 <Row className="g-2">
                   <Col xs={12}>
                     <Form.Group className="mb-2">
                       <Form.Label className="small fw-bold">Pontos Fortes Observados</Form.Label>
                       <div className="d-flex flex-wrap gap-1 mb-2 p-2 border rounded bg-light">
-                        {['Criatividade', 'Persistência', 'Foco', 'Colaboração', 'Autonomia', 'Organização', 'Comunicação clara', 'Resolução de problemas', 'Curiosidade', 'Paciência'].map(strength => (
+                        {['Criatividade', 'PersistÃªncia', 'Foco', 'ColaboraÃ§Ã£o', 'Autonomia', 'OrganizaÃ§Ã£o', 'ComunicaÃ§Ã£o clara', 'ResoluÃ§Ã£o de problemas', 'Curiosidade', 'PaciÃªncia'].map(strength => (
                           <span
                             key={strength}
                             onClick={() => {
@@ -387,9 +380,9 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
                   </Col>
                   <Col xs={12}>
                     <Form.Group className="mb-2">
-                      <Form.Label className="small fw-bold">Pontos de Atenção</Form.Label>
+                      <Form.Label className="small fw-bold">Pontos de AtenÃ§Ã£o</Form.Label>
                       <div className="d-flex flex-wrap gap-1 mb-2 p-2 border rounded bg-light">
-                        {['Atenção dispersa', 'Frustração', 'Dificuldade motora', 'Comunicação limitada', 'Dependência', 'Impulsividade', 'Recusa', 'Ansiedade', 'Desorganização'].map(attention => (
+                        {['AtenÃ§Ã£o dispersa', 'FrustraÃ§Ã£o', 'Dificuldade motora', 'ComunicaÃ§Ã£o limitada', 'DependÃªncia', 'Impulsividade', 'Recusa', 'Ansiedade', 'DesorganizaÃ§Ã£o'].map(attention => (
                           <span
                             key={attention}
                             onClick={() => {
@@ -411,15 +404,15 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
                         value={evaluation.attentionPoints}
                         onChange={(e) => setEvaluation(prev => ({ ...prev, attentionPoints: e.target.value }))}
                         ref={(el) => { textareaRefs.current['attentionPoints'] = el; }}
-                        placeholder="Clique nos pontos de atenção acima ou descreva outros..."
+                        placeholder="Clique nos pontos de atenÃ§Ã£o acima ou descreva outros..."
                       />
                     </Form.Group>
                   </Col>
                   <Col xs={12}>
                     <Form.Group className="mb-2">
-                      <Form.Label className="small fw-bold">Sugestões de Metas</Form.Label>
+                      <Form.Label className="small fw-bold">SugestÃµes de Metas</Form.Label>
                       <div className="d-flex flex-wrap gap-1 mb-2 p-2 border rounded bg-light">
-                        {['Aumentar autonomia', 'Melhorar comunicação', 'Desenvolver foco', 'Trabalhar frustração', 'Fortalecer motricidade', 'Estimular interação social', 'Ampliar vocabulário', 'Praticar sequenciamento', 'Reduzir impulsividade'].map(goal => (
+                        {['Aumentar autonomia', 'Melhorar comunicaÃ§Ã£o', 'Desenvolver foco', 'Trabalhar frustraÃ§Ã£o', 'Fortalecer motricidade', 'Estimular interaÃ§Ã£o social', 'Ampliar vocabulÃ¡rio', 'Praticar sequenciamento', 'Reduzir impulsividade'].map(goal => (
                           <span
                             key={goal}
                             onClick={() => {
@@ -447,7 +440,7 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
                   </Col>
                   <Col xs={12}>
                     <Form.Group className="mb-3">
-                      <Form.Label className="small fw-bold">Observações Gerais</Form.Label>
+                      <Form.Label className="small fw-bold">ObservaÃ§Ãµes Gerais</Form.Label>
                       <Form.Control
                         as="textarea"
                         size="sm"
@@ -455,7 +448,7 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
                         value={evaluation.notes}
                         onChange={(e) => setEvaluation(prev => ({ ...prev, notes: e.target.value }))}
                         ref={(el) => { textareaRefs.current['notes'] = el; }}
-                        placeholder="Descreva observações adicionais relevantes..."
+                        placeholder="Descreva observaÃ§Ãµes adicionais relevantes..."
                       />
                     </Form.Group>
                   </Col>
@@ -472,7 +465,7 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
               </Button>
             )}
             <Button type="submit" variant="primary" className="flex-fill">
-              {editingEvaluation ? '? Atualizar Avaliação' : '? Salvar Avaliação'}
+              {editingEvaluation ? 'âœ“ Atualizar AvaliaÃ§Ã£o' : 'âœ“ Salvar AvaliaÃ§Ã£o'}
             </Button>
           </div>
         </Form>
