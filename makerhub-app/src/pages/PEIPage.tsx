@@ -139,7 +139,7 @@ const PEIPage = () => {
 
             <Card className="mb-4 border-0 shadow-sm">
               <Card.Header className="bg-white border-bottom py-3">
-                <h6 className="mb-0 fw-bold text-warning">⚠️ Áreas de Atenção</h6>
+                <h6 className="mb-0 fw-bold text-warning">⚠︝ Ýreas de Atenção</h6>
               </Card.Header>
               <Card.Body>
                 <ListGroup variant="flush">
