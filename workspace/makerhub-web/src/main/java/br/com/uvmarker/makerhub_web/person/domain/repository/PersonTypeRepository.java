@@ -1,0 +1,15 @@
+package br.com.uvmarker.makerhub_web.person.domain.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import br.com.uvmarker.makerhub_web.person.domain.entity.PersonType;
+
+@Repository
+public interface PersonTypeRepository extends JpaRepository<PersonType, Long> {
+
+    List<PersonType> findByIsActiveTrue();
+
+}

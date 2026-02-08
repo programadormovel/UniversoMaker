@@ -1,0 +1,56 @@
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.fusesource.jansi.internal.JansiLoader in an unnamed module (file:/C:/Program%20Files/Maven/apache-maven-3.9.9/lib/jansi-2.4.1.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper (file:/C:/Program%20Files/Maven/apache-maven-3.9.9/lib/guava-33.2.1-jre.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< br.com.uvmarker:makerhub-web >--------------------
+[INFO] Building makerhub-web 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ makerhub-web ---
+[INFO] Deleting C:\Projetos\Projeto TI - Universo Marker\workspace_ai\makerhub-web\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ makerhub-web ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ makerhub-web ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 255 source files with javac [debug parameters release 17] to target\classes
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/user/mapper/UserMapper.java:[25,10] Unmapped target properties: "password, roles".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/professional/mapper/SpecialtyMapper.java:[15,18] Unmapped target property: "councilId".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/professional/mapper/SpecialtyMapper.java:[21,15] Unmapped target properties: "isActive, createdAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/user/mapper/UserCentralMapper.java:[28,10] Unmapped target property: "profileImageUrl".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/user/mapper/UserCentralMapper.java:[33,10] Unmapped target properties: "isActive, createdAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/user/mapper/UserCentralMapper.java:[54,22] Unmapped target property: "accessToken".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/professional/mapper/ProfessionalSpecialtyMapper.java:[26,27] Unmapped target property: "isActive".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[44,21] Unmapped target property: "isActive".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[97,25] Unmapped target property: "typeId".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[99,22] Unmapped target properties: "type, isActive, createdAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/person/mapper/PersonMapper.java:[16,15] Unmapped target property: "typeId".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/person/mapper/PersonMapper.java:[21,12] Unmapped target properties: "isActive, createdAt, updatedAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/person/mapper/PersonMapper.java:[32,10] Unmapped target properties: "type, updatedAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/institution/mapper/InstitutionCentralMapper.java:[22,20] Unmapped target property: "typeId".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/institution/mapper/InstitutionCentralMapper.java:[24,17] Unmapped target properties: "type, isActive, createdAt, updatedAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/institution/mapper/InstitutionCentralMapper.java:[32,24] Unmapped target properties: "isActive, createdAt, updatedAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/institution/mapper/InstitutionCentralMapper.java:[40,22] Unmapped target properties: "isActive, createdAt, updatedAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/institution/mapper/InstitutionCentralMapper.java:[48,18] Unmapped target properties: "createdAt, updatedAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/institution/mapper/InstitutionCentralMapper.java:[52,26] Unmapped target properties: "professionalRoleId, classId".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/institution/mapper/InstitutionCentralMapper.java:[55,23] Unmapped target properties: "professionalRole, createdAt, updatedAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[27,9] Unmapped target property: "isActive".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[40,27] Unmapped target property: "isActive".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[53,24] Unmapped target property: "isActive".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[64,19] Unmapped target property: "isActive".
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.668 s
+[INFO] Finished at: 2025-11-21T17:32:34-03:00
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,119 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< br.com.uvmarker:makerhub-web >--------------------
+[INFO] Building makerhub-web 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ makerhub-web ---
+[INFO] Deleting C:\Projetos\Projeto TI - Universo Marker\workspace_ai\makerhub-web\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ makerhub-web ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ makerhub-web ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 255 source files with javac [debug parameters release 17] to target\classes
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[59,22] Unmapped target properties: "createdAt, updatedAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[68,20] Unmapped target properties: "createdAt, updatedAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[77,24] Unmapped target properties: "createdAt, updatedAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[96,25] Unmapped target property: "typeId".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[98,22] Unmapped target properties: "type, isActive, createdAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/user/mapper/UserMapper.java:[25,10] Unmapped target properties: "password, roles".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/person/mapper/PersonCentralMapper.java:[24,15] Unmapped target property: "typeId".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/person/mapper/PersonCentralMapper.java:[25,12] Unmapped target properties: "type, isActive, createdAt, updatedAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/person/mapper/PersonCentralMapper.java:[38,21] Unmapped target properties: "isActive, createdAt, updatedAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/person/mapper/PersonCentralMapper.java:[47,17] Unmapped target properties: "isActive, createdAt, updatedAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/user/mapper/UserCentralMapper.java:[28,10] Unmapped target property: "profileImageUrl".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/user/mapper/UserCentralMapper.java:[32,10] Unmapped target properties: "isActive, createdAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/user/mapper/UserCentralMapper.java:[50,22] Unmapped target property: "accessToken".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/professional/mapper/ProfessionalSpecialtyMapper.java:[26,27] Unmapped target properties: "isActive, createdAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[41,27] Unmapped target properties: "isActive, createdAt, updatedAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/person/mapper/PersonMapper.java:[16,15] Unmapped target property: "typeId".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/person/mapper/PersonMapper.java:[21,12] Unmapped target properties: "isActive, createdAt, updatedAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/person/mapper/PersonMapper.java:[32,10] Unmapped target properties: "type, updatedAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/professional/mapper/SpecialtyMapper.java:[15,18] Unmapped target property: "councilId".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/professional/mapper/SpecialtyMapper.java:[21,15] Unmapped target properties: "isActive, createdAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/institution/mapper/InstitutionCentralMapper.java:[22,20] Unmapped target property: "typeId".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/institution/mapper/InstitutionCentralMapper.java:[23,17] Unmapped target properties: "type, isActive, createdAt, updatedAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/institution/mapper/InstitutionCentralMapper.java:[41,22] Unmapped target properties: "isActive, createdAt, updatedAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/institution/mapper/InstitutionCentralMapper.java:[50,18] Unmapped target properties: "createdAt, updatedAt".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/institution/mapper/InstitutionCentralMapper.java:[55,26] Unmapped target properties: "professionalRoleId, classId".
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/institution/mapper/InstitutionCentralMapper.java:[58,23] Unmapped target properties: "professionalRole, createdAt, updatedAt".
+[INFO] 26 warnings 
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[30,19] No property named "student.id" exists in source parameter(s). Did you mean "studentId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[30,19] No property named "professional.id" exists in source parameter(s). Did you mean "professionalId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[35,16] Unknown property "student" in type Evaluation.EvaluationBuilder for target name "student.id". Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[35,16] Unknown property "professional" in type Evaluation.EvaluationBuilder for target name "professional.id". Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[43,24] No property named "student.id" exists in source parameter(s). Did you mean "studentId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[43,24] No property named "professional.id" exists in source parameter(s). Did you mean "professionalId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[48,21] Unknown property "student" in type ClinicalHistory.ClinicalHistoryBuilder for target name "student.id". Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[48,21] Unknown property "professional" in type ClinicalHistory.ClinicalHistoryBuilder for target name "professional.id". Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[85,25] No property named "professional.id" exists in source parameter(s). Did you mean "professionalId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[90,22] Unknown property "professional" in type DiagnosticResult.DiagnosticResultBuilder for target name "professional.id". Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/person/mapper/PersonCentralMapper.java:[27,21] Ambiguous mapping methods found for mapping collection element to PersonDTO: PersonDTO toPersonDTO(Person entity), PersonDTO PersonMapper.toDTO(Person person). See https://mapstruct.org/faq/#ambiguous for more info.
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/person/mapper/PersonCentralMapper.java:[55,22] No property named "type.id" exists in source parameter(s). Did you mean "typeId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/person/mapper/PersonCentralMapper.java:[59,19] Unknown property "type" in type PersonContact.PersonContactBuilder for target name "type.id". Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/user/mapper/UserCentralMapper.java:[50,22] Can't map property "Set<Role> roles" to "List<String> roles". Consider to declare/implement a mapping method: "List<String> map(Set<Role> value)".
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[26,12] No property named "student.id" exists in source parameter(s). Did you mean "studentId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[26,12] No property named "professional.id" exists in source parameter(s). Did you mean "professionalId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[30,9] Unknown property "student" in type Pei.PeiBuilder for target name "student.id". Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[30,9] Unknown property "professional" in type Pei.PeiBuilder for target name "professional.id". Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[49,27] No property named "professional.id" exists in source parameter(s). Did you mean "professionalId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[54,24] Unknown property "professional" in type EducationalNeedPei.EducationalNeedPeiBuilder for target name "professional.id". Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[61,22] No property named "professional.id" exists in source parameter(s). Did you mean "professionalId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[65,19] Unknown property "professional" in type PeiMonitoring.PeiMonitoringBuilder for target name "professional.id". Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[70,42] Unknown property "peiId" in result type PeiFileDTO.PeiFileDTOBuilder. Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[73,23] No property named "peiId" exists in source parameter(s). Did you mean "id"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/institution/mapper/InstitutionCentralMapper.java:[28,27] No property named "type.id" exists in source parameter(s). Did you mean "typeId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/institution/mapper/InstitutionCentralMapper.java:[32,24] Unknown property "type" in type InstitutionContact.InstitutionContactBuilder for target name "type.id". Did you mean "null"?
+[INFO] 26 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.997 s
+[INFO] Finished at: 2025-11-21T11:33:26-03:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:compile (default-compile) on project makerhub-web: Compilation failure: Compilation failure: 
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[30,19] No property named "student.id" exists in source parameter(s). Did you mean "studentId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[30,19] No property named "professional.id" exists in source parameter(s). Did you mean "professionalId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[35,16] Unknown property "student" in type Evaluation.EvaluationBuilder for target name "student.id". Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[35,16] Unknown property "professional" in type Evaluation.EvaluationBuilder for target name "professional.id". Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[43,24] No property named "student.id" exists in source parameter(s). Did you mean "studentId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[43,24] No property named "professional.id" exists in source parameter(s). Did you mean "professionalId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[48,21] Unknown property "student" in type ClinicalHistory.ClinicalHistoryBuilder for target name "student.id". Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[48,21] Unknown property "professional" in type ClinicalHistory.ClinicalHistoryBuilder for target name "professional.id". Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[85,25] No property named "professional.id" exists in source parameter(s). Did you mean "professionalId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/evaluation/mapper/EvaluationCentralMapper.java:[90,22] Unknown property "professional" in type DiagnosticResult.DiagnosticResultBuilder for target name "professional.id". Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/person/mapper/PersonCentralMapper.java:[27,21] Ambiguous mapping methods found for mapping collection element to PersonDTO: PersonDTO toPersonDTO(Person entity), PersonDTO PersonMapper.toDTO(Person person). See https://mapstruct.org/faq/#ambiguous for more info.
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/person/mapper/PersonCentralMapper.java:[55,22] No property named "type.id" exists in source parameter(s). Did you mean "typeId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/person/mapper/PersonCentralMapper.java:[59,19] Unknown property "type" in type PersonContact.PersonContactBuilder for target name "type.id". Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/user/mapper/UserCentralMapper.java:[50,22] Can't map property "Set<Role> roles" to "List<String> roles". Consider to declare/implement a mapping method: "List<String> map(Set<Role> value)".
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[26,12] No property named "student.id" exists in source parameter(s). Did you mean "studentId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[26,12] No property named "professional.id" exists in source parameter(s). Did you mean "professionalId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[30,9] Unknown property "student" in type Pei.PeiBuilder for target name "student.id". Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[30,9] Unknown property "professional" in type Pei.PeiBuilder for target name "professional.id". Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[49,27] No property named "professional.id" exists in source parameter(s). Did you mean "professionalId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[54,24] Unknown property "professional" in type EducationalNeedPei.EducationalNeedPeiBuilder for target name "professional.id". Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[61,22] No property named "professional.id" exists in source parameter(s). Did you mean "professionalId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[65,19] Unknown property "professional" in type PeiMonitoring.PeiMonitoringBuilder for target name "professional.id". Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[70,42] Unknown property "peiId" in result type PeiFileDTO.PeiFileDTOBuilder. Did you mean "null"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/pei/mapper/PeiCentralMapper.java:[73,23] No property named "peiId" exists in source parameter(s). Did you mean "id"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/institution/mapper/InstitutionCentralMapper.java:[28,27] No property named "type.id" exists in source parameter(s). Did you mean "typeId"?
+[ERROR] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/institution/mapper/InstitutionCentralMapper.java:[32,24] Unknown property "type" in type InstitutionContact.InstitutionContactBuilder for target name "type.id". Did you mean "null"?
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

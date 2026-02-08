@@ -1,56 +1,75 @@
 import { useState, useEffect } from 'react'
-import { Container, Navbar, Alert, Button } from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom'
+import { Container, Alert, Button } from 'react-bootstrap'
+import { useNavigate, useLocation } from 'react-router-dom'
 import './App.css'
 import StudentSelector from './components/StudentSelector'
-import EvaluationForm from './components/EvaluationForm'
-import EvaluationHistory from './components/EvaluationHistory'
+import ComprehensiveEvaluationForm from './components/ComprehensiveEvaluationForm'
 import StudentForm from './components/StudentForm'
+import ModernHeader from './components/ModernHeader'
+import ModernFooter from './components/ModernFooter'
 import { Student, DailyEvaluation } from './types'
-import logo from './assets/logo-app-v4.jpg'
-import mascot from './assets/mascote.png'
+import { fetchStudents } from './services/studentService'
 
 function App() {
   const navigate = useNavigate();
-  const [students] = useState<Student[]>([
-    { id: '1', name: 'Ana Silva', age: 8, diagnosis: 'TEA Leve' },
-    { id: '2', name: 'João Santos', age: 10, diagnosis: 'TDAH' },
-    { id: '3', name: 'Maria Costa', age: 7, diagnosis: 'Síndrome de Down' },
-    { id: '4', name: 'Pedro Lima', age: 9, diagnosis: 'Dislexia' },
-    { id: '5', name: 'Sofia Mendes', age: 6, diagnosis: 'Deficiência Intelectual' },
-    { id: '6', name: 'Lucas Oliveira', age: 11, diagnosis: 'Típico' }
-  ])
+  const location = useLocation();
   
   const [selectedStudent, setSelectedStudent] = useState<string>('')
   const [evaluations, setEvaluations] = useState<DailyEvaluation[]>([])
   const [showSuccess, setShowSuccess] = useState(false)
   const [showStudentForm, setShowStudentForm] = useState(false)
-  const [studentList, setStudentList] = useState<Student[]>(students)
+  const [studentList, setStudentList] = useState<Student[]>([])
+  const [editingEvaluation, setEditingEvaluation] = useState<DailyEvaluation | undefined>(undefined)
 
   useEffect(() => {
+    const loadStudents = async () => {
+      const data = await fetchStudents();
+      setStudentList(data);
+    };
+    loadStudents();
+
     const savedEvaluations = localStorage.getItem('tea-evaluations')
     if (savedEvaluations) {
       setEvaluations(JSON.parse(savedEvaluations))
     }
-    
-    const savedStudents = localStorage.getItem('students')
-    if (savedStudents) {
-      setStudentList(JSON.parse(savedStudents))
+
+    if ((location.state as any)?.editEvaluation) {
+      const evalToEdit = (location.state as any).editEvaluation;
+      setSelectedStudent(evalToEdit.studentId);
+      setEditingEvaluation(evalToEdit);
     }
-  }, [])
+  }, [location.state])
 
   const handleSaveEvaluation = (evaluation: Omit<DailyEvaluation, 'id'>) => {
-    const newEvaluation: DailyEvaluation = {
-      ...evaluation,
-      id: Date.now().toString()
+    console.log('handleSaveEvaluation chamado:', evaluation);
+    try {
+      let updated: DailyEvaluation[]
+      
+      if (editingEvaluation) {
+        const updatedEvaluation: DailyEvaluation = {
+          ...evaluation,
+          id: editingEvaluation.id
+        }
+        updated = evaluations.map(e => e.id === editingEvaluation.id ? updatedEvaluation : e)
+        setEditingEvaluation(undefined)
+      } else {
+        const newEvaluation: DailyEvaluation = {
+          ...evaluation,
+          id: Date.now().toString()
+        }
+        updated = [...evaluations, newEvaluation]
+      }
+      
+      setEvaluations(updated)
+      localStorage.setItem('tea-evaluations', JSON.stringify(updated))
+      
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setShowSuccess(true)
+      setTimeout(() => setShowSuccess(false), 3000)
+    } catch (error) {
+      alert('Erro ao salvar avaliação. Tente novamente.');
+      console.error('Erro ao salvar:', error);
     }
-    
-    const updated = [...evaluations, newEvaluation]
-    setEvaluations(updated)
-    localStorage.setItem('tea-evaluations', JSON.stringify(updated))
-    
-    setShowSuccess(true)
-    setTimeout(() => setShowSuccess(false), 3000)
   }
 
   const handleSaveStudent = (student: Omit<Student, 'id'>) => {
@@ -64,58 +83,104 @@ function App() {
     localStorage.setItem('students', JSON.stringify(updated))
   }
 
-  const studentEvaluations = evaluations
-    .filter(evaluation => evaluation.studentId === selectedStudent)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  const handleCancelEdit = () => {
+    setEditingEvaluation(undefined)
+  }
 
   return (
-    <>
-      <Navbar bg="primary" variant="dark" className="mb-2 py-2" expand="lg">
-        <Container fluid className="px-3">
-          <Navbar.Brand className="d-flex align-items-center gap-2">
-            <img 
-              src={logo} 
-              alt="Universo Maker" 
-              style={{ height: '32px', width: '32px', objectFit: 'cover', borderRadius: '4px' }}
-            />
-            <span className="fs-5">Universo Maker</span>
-          </Navbar.Brand>
-          
-          <Button 
-            variant="outline-light" 
-            className="d-flex align-items-center gap-2"
-            onClick={() => navigate('/dashboard')}
-          >
-            <span>📈</span>
-            <span>Dashboard</span>
-          </Button>
-        </Container>
-      </Navbar>
+    <div style={{ backgroundColor: '#fafafa', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <ModernHeader title="Universo Maker" showBackButton={false} />
       
-      <div style={{ marginTop: '70px' }}>
-        <Container fluid className="px-2 px-md-3" style={{ maxWidth: '100%', width: '100%' }}>
-          <div className="row w-100 mx-0">
-            <div className="col-12 px-2">
+      <div style={{ paddingTop: '80px', flex: 1, paddingBottom: '40px' }}>
+        <Container style={{ maxWidth: '935px' }}>
+          <div className="d-flex justify-content-end gap-2 mb-4">
+            <Button 
+              onClick={() => navigate('/dashboard')}
+              style={{
+                backgroundColor: 'transparent',
+                border: 'none',
+                color: '#0095f6',
+                fontWeight: 600,
+                fontSize: '14px',
+                padding: '8px 16px',
+                borderRadius: '8px',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#f0f8ff';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+              }}
+            >
+              📊 Dashboard
+            </Button>
+            <Button 
+              onClick={() => {
+                if (confirm('Deseja realmente limpar todas as avaliações?')) {
+                  localStorage.removeItem('tea-evaluations');
+                  setEvaluations([]);
+                  alert('Avaliações removidas com sucesso!');
+                }
+              }}
+              style={{
+                backgroundColor: 'transparent',
+                border: 'none',
+                color: '#ed4956',
+                fontWeight: 600,
+                fontSize: '14px',
+                padding: '8px 16px',
+                borderRadius: '8px',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#fff0f1';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+              }}
+            >
+              🗑️ Limpar
+            </Button>
+          </div>
+
+          <div className="row">
+            <div className="col-12">
             {showSuccess && (
-              <Alert variant="success" dismissible onClose={() => setShowSuccess(false)}>
-                Avaliação salva com sucesso!
+              <Alert variant="success" dismissible onClose={() => setShowSuccess(false)} className="mb-4 shadow-sm border-0">
+                <strong>✓ Sucesso!</strong> Avaliação salva com sucesso!
               </Alert>
             )}
             
-            <div className="row g-2 mb-3 w-100 mx-0">
-              <div className="col-9 px-1">
-                <StudentSelector
-                  students={studentList}
-                  selectedStudent={selectedStudent}
-                  onStudentChange={setSelectedStudent}
-                />
+            <div className="row g-3 mb-4">
+              <div className="col-md-8 col-lg-9">
+                <div className="p-3 bg-white border rounded shadow-sm h-100 d-flex align-items-center">
+                  <StudentSelector
+                    students={studentList}
+                    selectedStudent={selectedStudent}
+                    onStudentChange={setSelectedStudent}
+                  />
+                </div>
               </div>
-              <div className="col-3 px-1">
+              <div className="col-md-4 col-lg-3">
                 <div className="d-grid h-100">
                   <Button 
-                    variant="outline-primary" 
-                    className="w-100 h-100 d-flex align-items-center justify-content-center"
+                    className="w-100 h-100 d-flex align-items-center justify-content-center fw-bold shadow-sm"
                     onClick={() => setShowStudentForm(true)}
+                    style={{ 
+                      backgroundColor: '#0095f6', 
+                      borderColor: '#0095f6',
+                      border: 'none',
+                      borderRadius: '8px',
+                      fontWeight: 600,
+                      transition: 'all 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#0084e0';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '#0095f6';
+                    }}
                   >
                     + Aluno
                   </Button>
@@ -130,34 +195,26 @@ function App() {
             />
             
             {selectedStudent && (
-              <div className="row g-2 g-sm-3 w-100 mx-0">
-                <div className="col-12 px-1">
-                  <EvaluationForm
-                    studentId={selectedStudent}
-                    onSave={handleSaveEvaluation}
-                  />
-                </div>
-                <div className="col-12 px-1">
-                  <EvaluationHistory evaluations={studentEvaluations} />
+              <div className="row">
+                <div className="col-12">
+                  <div className="bg-white border rounded shadow-sm p-4">
+                    <ComprehensiveEvaluationForm
+                      studentId={selectedStudent}
+                      onSave={handleSaveEvaluation}
+                      editingEvaluation={editingEvaluation}
+                      onCancelEdit={handleCancelEdit}
+                    />
+                  </div>
                 </div>
               </div>
             )}
           </div>
         </div>
-        
-        <div className="row justify-content-center mt-4">
-          <div className="col-auto">
-            <img 
-              src={mascot} 
-              alt="Mascote Universo Maker" 
-              style={{ height: '80px', opacity: 0.7 }}
-              className="d-block mx-auto"
-            />
-            </div>
-          </div>
         </Container>
       </div>
-    </>
+
+      <ModernFooter />
+    </div>
   )
 }
 

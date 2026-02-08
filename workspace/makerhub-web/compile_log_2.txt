@@ -1,0 +1,880 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< br.com.uvmarker:makerhub-web >--------------------
+[INFO] Building makerhub-web 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ makerhub-web ---
+[INFO] Deleting C:\Projetos\Projeto TI - Universo Marker\workspace_ai\makerhub-web\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ makerhub-web ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ makerhub-web ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 255 source files with javac [debug parameters release 17] to target\classes
+[INFO] MapStruct: Using accessor naming strategy: org.mapstruct.ap.spi.DefaultAccessorNamingStrategy
+[INFO] MapStruct: Using builder provider: org.mapstruct.ap.spi.DefaultBuilderProvider
+[INFO] MapStruct: Using enum naming strategy: org.mapstruct.ap.spi.DefaultEnumMappingStrategy
+[INFO]  MapStruct: processing: br.com.uvmarker.makerhub_web.person.mapper.PersonMapper.
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.person.dto.PersonDTO toDTO(br.com.uvmarker.makerhub_web.person.domain.entity.Person person).
+[INFO] -- MapStruct: mapping property: personTypeId( person ) to: typeId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: personTypeId( person ).
+[INFO] -- MapStruct: mapping property: person.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: person.getId().
+[INFO] -- MapStruct: mapping property: person.getUserId() to: userId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: person.getUserId().
+[INFO] -- MapStruct: mapping property: person.getName() to: name(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: person.getName().
+[INFO] -- MapStruct: mapping property: person.getBirthDate() to: birthDate(java.time.LocalDate).
+[INFO] -- MapStruct: selecting property mapping: person.getBirthDate().
+[INFO] -- MapStruct: mapping property: person.getGender() to: gender(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: person.getGender().
+[INFO] -- MapStruct: mapping property: person.getDocument() to: document(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: person.getDocument().
+[INFO] -- MapStruct: mapping property: person.getPersonImageUrl() to: personImageUrl(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: person.getPersonImageUrl().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.person.domain.entity.Person toEntity(br.com.uvmarker.makerhub_web.person.dto.PersonDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: type(br.com.uvmarker.makerhub_web.person.domain.entity.PersonType).
+[INFO] -- MapStruct: mapping property: personDTO.getTypeId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: personDTO.getTypeId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.person.domain.entity.PersonType #personDTOToPersonType(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.person.domain.entity.PersonType #personDTOToPersonType(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getUserId() to: userId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getUserId().
+[INFO] -- MapStruct: mapping property: dto.getName() to: name(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getName().
+[INFO] -- MapStruct: mapping property: dto.getBirthDate() to: birthDate(java.time.LocalDate).
+[INFO] -- MapStruct: selecting property mapping: dto.getBirthDate().
+[INFO] -- MapStruct: mapping property: dto.getGender() to: gender(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getGender().
+[INFO] -- MapStruct: mapping property: dto.getDocument() to: document(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getDocument().
+[INFO] -- MapStruct: mapping property: dto.getPersonImageUrl() to: personImageUrl(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getPersonImageUrl().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.person.dto.PersonDTO> toDTOList(java.util.List<br.com.uvmarker.makerhub_web.person.domain.entity.Person> people).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.person.dto.PersonDTO #toDTO(person).
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.person.dto.PersonSummaryDTO toSummaryDTO(br.com.uvmarker.makerhub_web.person.domain.entity.Person person).
+[INFO] -- MapStruct: mapping property: person.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: person.getId().
+[INFO] -- MapStruct: mapping property: person.getName() to: name(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: person.getName().
+[INFO] -- MapStruct: mapping property: person.getBirthDate() to: birthDate(java.time.LocalDate).
+[INFO] -- MapStruct: selecting property mapping: person.getBirthDate().
+[INFO] -- MapStruct: mapping property: person.getGender() to: gender(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: person.getGender().
+[INFO] -- MapStruct: mapping property: person.getDocument() to: document(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: person.getDocument().
+[INFO] -- MapStruct: mapping property: person.getPersonImageUrl() to: personImageUrl(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: person.getPersonImageUrl().
+[INFO] -- MapStruct: mapping property: person.getUserId() to: userId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: person.getUserId().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.person.dto.PersonSummaryDTO> toSummaryDTOList(java.util.List<br.com.uvmarker.makerhub_web.person.domain.entity.Person> people).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.person.dto.PersonSummaryDTO #toSummaryDTO(person).
+[INFO] - MapStruct: creating bean mapping method implementation for void updateEntityFromDTO(br.com.uvmarker.makerhub_web.person.dto.PersonDTO dto, @MappingTarget br.com.uvmarker.makerhub_web.person.domain.entity.Person entity).
+[INFO] -- MapStruct: mapping property: dto.getUserId() to: setUserId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getUserId().
+[INFO] -- MapStruct: mapping property: dto.getName() to: setName(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getName().
+[INFO] -- MapStruct: mapping property: dto.getBirthDate() to: setBirthDate(java.time.LocalDate).
+[INFO] -- MapStruct: selecting property mapping: dto.getBirthDate().
+[INFO] -- MapStruct: mapping property: dto.getGender() to: setGender(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getGender().
+[INFO] -- MapStruct: mapping property: dto.getDocument() to: setDocument(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getDocument().
+[INFO] -- MapStruct: mapping property: dto.getPersonImageUrl() to: setPersonImageUrl(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getPersonImageUrl().
+[INFO]  MapStruct: processing: br.com.uvmarker.makerhub_web.user.mapper.UserCentralMapper.
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.user.domain.entity.User toUserEntity(br.com.uvmarker.makerhub_web.user.dto.UserRegisterDTO dto).
+[INFO] -- MapStruct: mapping property: dto.getFullname() to: fullname(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getFullname().
+[INFO] -- MapStruct: mapping property: dto.getUsername() to: username(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getUsername().
+[INFO] -- MapStruct: mapping property: dto.getPassword() to: password(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getPassword().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.user.dto.RoleDTO toRoleDTO(br.com.uvmarker.makerhub_web.user.domain.entity.Role entity).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getRoleName() to: roleName(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getRoleName().
+[INFO] -- MapStruct: mapping property: entity.getDescription() to: description(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getDescription().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.user.domain.entity.Role toRoleEntity(br.com.uvmarker.makerhub_web.user.dto.RoleDTO dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getRoleName() to: roleName(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getRoleName().
+[INFO] -- MapStruct: mapping property: dto.getDescription() to: description(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getDescription().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.user.dto.RoleDTO> toRoleDTOList(java.util.List<br.com.uvmarker.makerhub_web.user.domain.entity.Role> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.user.dto.RoleDTO #toRoleDTO(role).
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.user.dto.UserTokenDTO toUserTokenDTO(br.com.uvmarker.makerhub_web.user.domain.entity.UserToken entity).
+[INFO] -- MapStruct: mapping property: entityUserId( entity ) to: userId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityUserId( entity ).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getToken() to: token(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getToken().
+[INFO] -- MapStruct: mapping property: entity.getTokenType() to: tokenType(br.com.uvmarker.makerhub_web.common.enums.TokenType).
+[INFO] -- MapStruct: selecting property mapping: entity.getTokenType().
+[INFO] -- MapStruct: mapping property: entity.getIsRevoked() to: isRevoked(java.lang.Boolean).
+[INFO] -- MapStruct: selecting property mapping: entity.getIsRevoked().
+[INFO] -- MapStruct: mapping property: entity.getExpiresAt() to: expiresAt(java.time.LocalDateTime).
+[INFO] -- MapStruct: selecting property mapping: entity.getExpiresAt().
+[INFO] -- MapStruct: mapping property: entity.getCreatedAt() to: createdAt(java.time.LocalDateTime).
+[INFO] -- MapStruct: selecting property mapping: entity.getCreatedAt().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.user.domain.entity.UserToken toUserTokenEntity(br.com.uvmarker.makerhub_web.user.dto.UserTokenDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: user(br.com.uvmarker.makerhub_web.user.domain.entity.User).
+[INFO] -- MapStruct: mapping property: userTokenDTO.getUserId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: userTokenDTO.getUserId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.user.domain.entity.User #userTokenDTOToUser(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.user.domain.entity.User #userTokenDTOToUser(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getToken() to: token(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getToken().
+[INFO] -- MapStruct: mapping property: dto.getTokenType() to: tokenType(br.com.uvmarker.makerhub_web.common.enums.TokenType).
+[INFO] -- MapStruct: selecting property mapping: dto.getTokenType().
+[INFO] -- MapStruct: mapping property: dto.getIsRevoked() to: isRevoked(java.lang.Boolean).
+[INFO] -- MapStruct: selecting property mapping: dto.getIsRevoked().
+[INFO] -- MapStruct: mapping property: dto.getExpiresAt() to: expiresAt(java.time.LocalDateTime).
+[INFO] -- MapStruct: selecting property mapping: dto.getExpiresAt().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.user.dto.UserTokenDTO> toUserTokenDTOList(java.util.List<br.com.uvmarker.makerhub_web.user.domain.entity.UserToken> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.user.dto.UserTokenDTO #toUserTokenDTO(userToken).
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.user.dto.LoginResponseDTO toLoginResponseDTO(br.com.uvmarker.makerhub_web.user.domain.entity.User entity).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getFullname() to: fullname(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getFullname().
+[INFO] -- MapStruct: mapping property: entity.getUsername() to: username(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getUsername().
+[INFO] -- MapStruct: mapping property: entity.getProfileImageUrl() to: profileImageUrl(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getProfileImageUrl().
+[INFO] -- MapStruct: mapping property: entity.getStatusUser() to: statusUser(br.com.uvmarker.makerhub_web.common.enums.StatusUser).
+[INFO] -- MapStruct: selecting property mapping: entity.getStatusUser().
+[INFO] -- MapStruct: mapping property: entity.getRoles() to: roles(java.util.List<java.lang.String>).
+[INFO] -- MapStruct: selecting property mapping: java.util.List<java.lang.String> UserMapper#mapRoles(entity.getRoles()).
+[INFO]  MapStruct: processing: br.com.uvmarker.makerhub_web.pei.mapper.PeiCentralMapper.
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.pei.dto.PeiDTO toPeiDTO(br.com.uvmarker.makerhub_web.pei.domain.entity.Pei entity).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getStudentId() to: studentId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getStudentId().
+[INFO] -- MapStruct: mapping property: entity.getProfessionalId() to: professionalId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getProfessionalId().
+[INFO] -- MapStruct: mapping property: entity.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getNotes().
+[INFO] -- MapStruct: mapping property: entity.getDiagnostic() to: diagnostic(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getDiagnostic().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.pei.domain.entity.Pei toPeiEntity(br.com.uvmarker.makerhub_web.pei.dto.PeiDTO dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getStudentId() to: studentId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getStudentId().
+[INFO] -- MapStruct: mapping property: dto.getProfessionalId() to: professionalId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getProfessionalId().
+[INFO] -- MapStruct: mapping property: dto.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getNotes().
+[INFO] -- MapStruct: mapping property: dto.getDiagnostic() to: diagnostic(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getDiagnostic().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.pei.dto.PeiDTO> toPeiDTOList(java.util.List<br.com.uvmarker.makerhub_web.pei.domain.entity.Pei> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.pei.dto.PeiDTO #toPeiDTO(pei).
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.pei.dto.EvaluationFunctionPeiDTO toEvaluationFunctionPeiDTO(br.com.uvmarker.makerhub_web.pei.domain.entity.EvaluationFunctionPei entity).
+[INFO] -- MapStruct: mapping property: entityPeiId( entity ) to: peiId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityPeiId( entity ).
+[INFO] -- MapStruct: mapping property: entityFunctionId( entity ) to: functionId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityFunctionId( entity ).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getNotes().
+[INFO] -- MapStruct: mapping property: entity.getScore() to: score(java.lang.Integer).
+[INFO] -- MapStruct: selecting property mapping: entity.getScore().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.pei.domain.entity.EvaluationFunctionPei toEvaluationFunctionPeiEntity(br.com.uvmarker.makerhub_web.pei.dto.EvaluationFunctionPeiDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: pei(br.com.uvmarker.makerhub_web.pei.domain.entity.Pei).
+[INFO] -- MapStruct: mapping property: evaluationFunctionPeiDTO.getPeiId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: evaluationFunctionPeiDTO.getPeiId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.pei.domain.entity.Pei #evaluationFunctionPeiDTOToPei(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.pei.domain.entity.Pei #evaluationFunctionPeiDTOToPei(dto).
+[INFO] -- MapStruct: mapping property: dto to: function(br.com.uvmarker.makerhub_web.pei.domain.entity.FunctionType).
+[INFO] -- MapStruct: mapping property: evaluationFunctionPeiDTO.getFunctionId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: evaluationFunctionPeiDTO.getFunctionId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.pei.domain.entity.FunctionType #evaluationFunctionPeiDTOToFunctionType(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.pei.domain.entity.FunctionType #evaluationFunctionPeiDTOToFunctionType(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getNotes().
+[INFO] -- MapStruct: mapping property: dto.getScore() to: score(java.lang.Integer).
+[INFO] -- MapStruct: selecting property mapping: dto.getScore().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.pei.dto.EvaluationFunctionPeiDTO> toEvaluationFunctionPeiDTOList(java.util.List<br.com.uvmarker.makerhub_web.pei.domain.entity.EvaluationFunctionPei> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.pei.dto.EvaluationFunctionPeiDTO #toEvaluationFunctionPeiDTO(evaluationFunctionPei).
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.pei.dto.EducationalNeedPeiDTO toEducationalNeedPeiDTO(br.com.uvmarker.makerhub_web.pei.domain.entity.EducationalNeedPei entity).
+[INFO] -- MapStruct: mapping property: entityPeiId1( entity ) to: peiId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityPeiId1( entity ).
+[INFO] -- MapStruct: mapping property: entityEducationalNeedId( entity ) to: educationalNeedId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityEducationalNeedId( entity ).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getProfessionalId() to: professionalId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getProfessionalId().
+[INFO] -- MapStruct: mapping property: entity.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getNotes().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.pei.domain.entity.EducationalNeedPei toEducationalNeedPeiEntity(br.com.uvmarker.makerhub_web.pei.dto.EducationalNeedPeiDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: pei(br.com.uvmarker.makerhub_web.pei.domain.entity.Pei).
+[INFO] -- MapStruct: mapping property: educationalNeedPeiDTO.getPeiId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: educationalNeedPeiDTO.getPeiId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.pei.domain.entity.Pei #educationalNeedPeiDTOToPei(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.pei.domain.entity.Pei #educationalNeedPeiDTOToPei(dto).
+[INFO] -- MapStruct: mapping property: dto to: educationalNeed(br.com.uvmarker.makerhub_web.pei.domain.entity.EducationalNeed).
+[INFO] -- MapStruct: mapping property: educationalNeedPeiDTO.getEducationalNeedId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: educationalNeedPeiDTO.getEducationalNeedId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.pei.domain.entity.EducationalNeed #educationalNeedPeiDTOToEducationalNeed(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.pei.domain.entity.EducationalNeed #educationalNeedPeiDTOToEducationalNeed(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getProfessionalId() to: professionalId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getProfessionalId().
+[INFO] -- MapStruct: mapping property: dto.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getNotes().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.pei.dto.EducationalNeedPeiDTO> toEducationalNeedPeiDTOList(java.util.List<br.com.uvmarker.makerhub_web.pei.domain.entity.EducationalNeedPei> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.pei.dto.EducationalNeedPeiDTO #toEducationalNeedPeiDTO(educationalNeedPei).
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.pei.dto.PeiMonitoringDTO toPeiMonitoringDTO(br.com.uvmarker.makerhub_web.pei.domain.entity.PeiMonitoring entity).
+[INFO] -- MapStruct: mapping property: entityPeiId2( entity ) to: peiId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityPeiId2( entity ).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getProfessionalId() to: professionalId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getProfessionalId().
+[INFO] -- MapStruct: mapping property: entity.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getNotes().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.pei.domain.entity.PeiMonitoring toPeiMonitoringEntity(br.com.uvmarker.makerhub_web.pei.dto.PeiMonitoringDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: pei(br.com.uvmarker.makerhub_web.pei.domain.entity.Pei).
+[INFO] -- MapStruct: mapping property: peiMonitoringDTO.getPeiId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: peiMonitoringDTO.getPeiId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.pei.domain.entity.Pei #peiMonitoringDTOToPei(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.pei.domain.entity.Pei #peiMonitoringDTOToPei(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getProfessionalId() to: professionalId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getProfessionalId().
+[INFO] -- MapStruct: mapping property: dto.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getNotes().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.pei.dto.PeiMonitoringDTO> toPeiMonitoringDTOList(java.util.List<br.com.uvmarker.makerhub_web.pei.domain.entity.PeiMonitoring> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.pei.dto.PeiMonitoringDTO #toPeiMonitoringDTO(peiMonitoring).
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.pei.dto.PeiFileDTO toPeiFileDTO(br.com.uvmarker.makerhub_web.pei.domain.entity.PeiFile entity).
+[INFO] -- MapStruct: mapping property: entityPeiId3( entity ) to: peiId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityPeiId3( entity ).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getFileUrl() to: fileUrl(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getFileUrl().
+[INFO] -- MapStruct: mapping property: entity.getDescription() to: description(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getDescription().
+[INFO] -- MapStruct: mapping property: entity.getIsActive() to: isActive(java.lang.Boolean).
+[INFO] -- MapStruct: selecting property mapping: entity.getIsActive().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.pei.domain.entity.PeiFile toPeiFileEntity(br.com.uvmarker.makerhub_web.pei.dto.PeiFileDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: pei(br.com.uvmarker.makerhub_web.pei.domain.entity.Pei).
+[INFO] -- MapStruct: mapping property: peiFileDTO.getPeiId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: peiFileDTO.getPeiId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.pei.domain.entity.Pei #peiFileDTOToPei(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.pei.domain.entity.Pei #peiFileDTOToPei(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getFileUrl() to: fileUrl(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getFileUrl().
+[INFO] -- MapStruct: mapping property: dto.getDescription() to: description(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getDescription().
+[INFO] -- MapStruct: mapping property: dto.getIsActive() to: isActive(java.lang.Boolean).
+[INFO] -- MapStruct: selecting property mapping: dto.getIsActive().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.pei.dto.PeiFileDTO> toPeiFileDTOList(java.util.List<br.com.uvmarker.makerhub_web.pei.domain.entity.PeiFile> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.pei.dto.PeiFileDTO #toPeiFileDTO(peiFile).
+[INFO]  MapStruct: processing: br.com.uvmarker.makerhub_web.user.mapper.UserMapper.
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.user.dto.UserDTO toDTO(br.com.uvmarker.makerhub_web.user.domain.entity.User user).
+[INFO] -- MapStruct: mapping property: user.getStatusUser() to: statusUser(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: java.lang.String #mapStatus(user.getStatusUser()).
+[INFO] -- MapStruct: mapping property: user.getRoles() to: roleNames(java.util.List<java.lang.String>).
+[INFO] -- MapStruct: selecting property mapping: java.util.List<java.lang.String> #mapRoles(user.getRoles()).
+[INFO] -- MapStruct: mapping property: user.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: user.getId().
+[INFO] -- MapStruct: mapping property: user.getFullname() to: fullname(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: user.getFullname().
+[INFO] -- MapStruct: mapping property: user.getUsername() to: username(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: user.getUsername().
+[INFO] -- MapStruct: mapping property: user.getProfileImageUrl() to: profileImageUrl(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: user.getProfileImageUrl().
+[INFO] -- MapStruct: mapping property: user.getIsActive() to: isActive(java.lang.Boolean).
+[INFO] -- MapStruct: selecting property mapping: user.getIsActive().
+[INFO] -- MapStruct: mapping property: user.getCreatedAt() to: createdAt(java.time.LocalDateTime).
+[INFO] -- MapStruct: selecting property mapping: user.getCreatedAt().
+[INFO] -- MapStruct: mapping property: user.getUpdatedAt() to: updatedAt(java.time.LocalDateTime).
+[INFO] -- MapStruct: selecting property mapping: user.getUpdatedAt().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.user.domain.entity.User toEntity(br.com.uvmarker.makerhub_web.user.dto.UserDTO userDTO).
+[INFO] -- MapStruct: mapping property: userDTO.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: userDTO.getId().
+[INFO] -- MapStruct: mapping property: userDTO.getFullname() to: fullname(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: userDTO.getFullname().
+[INFO] -- MapStruct: mapping property: userDTO.getUsername() to: username(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: userDTO.getUsername().
+[INFO] -- MapStruct: mapping property: userDTO.getProfileImageUrl() to: profileImageUrl(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: userDTO.getProfileImageUrl().
+[INFO] -- MapStruct: mapping property: userDTO.getIsActive() to: isActive(java.lang.Boolean).
+[INFO] -- MapStruct: selecting property mapping: userDTO.getIsActive().
+[INFO] -- MapStruct: mapping property: userDTO.getCreatedAt() to: createdAt(java.time.LocalDateTime).
+[INFO] -- MapStruct: selecting property mapping: userDTO.getCreatedAt().
+[INFO] -- MapStruct: mapping property: userDTO.getUpdatedAt() to: updatedAt(java.time.LocalDateTime).
+[INFO] -- MapStruct: selecting property mapping: userDTO.getUpdatedAt().
+[INFO] -- MapStruct: mapping property: userDTO.getStatusUser() to: statusUser(br.com.uvmarker.makerhub_web.common.enums.StatusUser).
+[INFO] -- MapStruct: selecting property mapping: Enum.valueOf( StatusUser.class, userDTO.getStatusUser() ).
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/user/mapper/UserMapper.java:[25,10] Unmapped target properties: "password, roles".
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.user.dto.UserDTO> toDTOList(java.util.List<br.com.uvmarker.makerhub_web.user.domain.entity.User> users).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.user.dto.UserDTO #toDTO(user).
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.user.dto.UserSummaryDTO toSummaryDTO(br.com.uvmarker.makerhub_web.user.domain.entity.User user).
+[INFO] -- MapStruct: mapping property: user.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: user.getId().
+[INFO] -- MapStruct: mapping property: user.getFullname() to: fullname(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: user.getFullname().
+[INFO] -- MapStruct: mapping property: user.getUsername() to: username(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: user.getUsername().
+[INFO] -- MapStruct: mapping property: user.getProfileImageUrl() to: profileImageUrl(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: user.getProfileImageUrl().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.user.dto.UserSummaryDTO> toSummaryDTOList(java.util.List<br.com.uvmarker.makerhub_web.user.domain.entity.User> users).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.user.dto.UserSummaryDTO #toSummaryDTO(user).
+[INFO]  MapStruct: processing: br.com.uvmarker.makerhub_web.institution.mapper.InstitutionCentralMapper.
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.institution.dto.InstitutionDTO toInstitutionDTO(br.com.uvmarker.makerhub_web.institution.domain.entity.Institution entity).
+[INFO] -- MapStruct: mapping property: entityTypeId( entity ) to: typeId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityTypeId( entity ).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getUserId() to: userId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getUserId().
+[INFO] -- MapStruct: mapping property: entity.getName() to: name(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getName().
+[INFO] -- MapStruct: mapping property: entity.getDescription() to: description(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getDescription().
+[INFO] -- MapStruct: mapping property: entity.getZipCode() to: zipCode(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getZipCode().
+[INFO] -- MapStruct: mapping property: entity.getAddressNr() to: addressNr(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getAddressNr().
+[INFO] -- MapStruct: mapping property: entity.getAddressInfo() to: addressInfo(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getAddressInfo().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.institution.domain.entity.Institution toInstitutionEntity(br.com.uvmarker.makerhub_web.institution.dto.InstitutionDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: type(br.com.uvmarker.makerhub_web.institution.domain.entity.InstitutionType).
+[INFO] -- MapStruct: mapping property: institutionDTO.getTypeId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: institutionDTO.getTypeId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.institution.domain.entity.InstitutionType #institutionDTOToInstitutionType(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.institution.domain.entity.InstitutionType #institutionDTOToInstitutionType(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getUserId() to: userId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getUserId().
+[INFO] -- MapStruct: mapping property: dto.getName() to: name(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getName().
+[INFO] -- MapStruct: mapping property: dto.getDescription() to: description(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getDescription().
+[INFO] -- MapStruct: mapping property: dto.getZipCode() to: zipCode(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getZipCode().
+[INFO] -- MapStruct: mapping property: dto.getAddressNr() to: addressNr(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getAddressNr().
+[INFO] -- MapStruct: mapping property: dto.getAddressInfo() to: addressInfo(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getAddressInfo().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.institution.dto.InstitutionDTO> toInstitutionDTOList(java.util.List<br.com.uvmarker.makerhub_web.institution.domain.entity.Institution> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.institution.dto.InstitutionDTO #toInstitutionDTO(institution).
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.institution.dto.InstitutionContactDTO toInstitutionContactDTO(br.com.uvmarker.makerhub_web.institution.domain.entity.InstitutionContact entity).
+[INFO] -- MapStruct: mapping property: entityInstitutionId( entity ) to: institutionId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityInstitutionId( entity ).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getTypeId() to: typeId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getTypeId().
+[INFO] -- MapStruct: mapping property: entity.getContact() to: contact(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getContact().
+[INFO] -- MapStruct: mapping property: entity.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getNotes().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.institution.domain.entity.InstitutionContact toInstitutionContactEntity(br.com.uvmarker.makerhub_web.institution.dto.InstitutionContactDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: institution(br.com.uvmarker.makerhub_web.institution.domain.entity.Institution).
+[INFO] -- MapStruct: mapping property: institutionContactDTO.getInstitutionId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: institutionContactDTO.getInstitutionId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.institution.domain.entity.Institution #institutionContactDTOToInstitution(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.institution.domain.entity.Institution #institutionContactDTOToInstitution(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getTypeId() to: typeId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getTypeId().
+[INFO] -- MapStruct: mapping property: dto.getContact() to: contact(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getContact().
+[INFO] -- MapStruct: mapping property: dto.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getNotes().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.institution.dto.InstitutionContactDTO> toInstitutionContactDTOList(java.util.List<br.com.uvmarker.makerhub_web.institution.domain.entity.InstitutionContact> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.institution.dto.InstitutionContactDTO #toInstitutionContactDTO(institutionContact).
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.institution.dto.InstitutionClassDTO toInstitutionClassDTO(br.com.uvmarker.makerhub_web.institution.domain.entity.InstitutionClass entity).
+[INFO] -- MapStruct: mapping property: entityInstitutionId1( entity ) to: institutionId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityInstitutionId1( entity ).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getName() to: name(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getName().
+[INFO] -- MapStruct: mapping property: entity.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getNotes().
+[INFO] -- MapStruct: mapping property: entity.getAcademicYear() to: academicYear(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getAcademicYear().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.institution.domain.entity.InstitutionClass toInstitutionClassEntity(br.com.uvmarker.makerhub_web.institution.dto.InstitutionClassDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: institution(br.com.uvmarker.makerhub_web.institution.domain.entity.Institution).
+[INFO] -- MapStruct: mapping property: institutionClassDTO.getInstitutionId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: institutionClassDTO.getInstitutionId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.institution.domain.entity.Institution #institutionClassDTOToInstitution(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.institution.domain.entity.Institution #institutionClassDTOToInstitution(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getName() to: name(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getName().
+[INFO] -- MapStruct: mapping property: dto.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getNotes().
+[INFO] -- MapStruct: mapping property: dto.getAcademicYear() to: academicYear(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getAcademicYear().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.institution.dto.InstitutionClassDTO> toInstitutionClassDTOList(java.util.List<br.com.uvmarker.makerhub_web.institution.domain.entity.InstitutionClass> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.institution.dto.InstitutionClassDTO #toInstitutionClassDTO(institutionClass).
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.institution.dto.StudentClassDTO toStudentClassDTO(br.com.uvmarker.makerhub_web.institution.domain.entity.StudentClass entity).
+[INFO] -- MapStruct: mapping property: entityInstitutionClassId( entity ) to: classId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityInstitutionClassId( entity ).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getStudentId() to: studentId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getStudentId().
+[INFO] -- MapStruct: mapping property: entity.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getNotes().
+[INFO] -- MapStruct: mapping property: entity.getIsActive() to: isActive(java.lang.Boolean).
+[INFO] -- MapStruct: selecting property mapping: entity.getIsActive().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.institution.domain.entity.StudentClass toStudentClassEntity(br.com.uvmarker.makerhub_web.institution.dto.StudentClassDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: institutionClass(br.com.uvmarker.makerhub_web.institution.domain.entity.InstitutionClass).
+[INFO] -- MapStruct: mapping property: studentClassDTO.getClassId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: studentClassDTO.getClassId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.institution.domain.entity.InstitutionClass #studentClassDTOToInstitutionClass(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.institution.domain.entity.InstitutionClass #studentClassDTOToInstitutionClass(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getStudentId() to: studentId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getStudentId().
+[INFO] -- MapStruct: mapping property: dto.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getNotes().
+[INFO] -- MapStruct: mapping property: dto.getIsActive() to: isActive(java.lang.Boolean).
+[INFO] -- MapStruct: selecting property mapping: dto.getIsActive().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.institution.dto.StudentClassDTO> toStudentClassDTOList(java.util.List<br.com.uvmarker.makerhub_web.institution.domain.entity.StudentClass> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.institution.dto.StudentClassDTO #toStudentClassDTO(studentClass).
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.institution.dto.ProfessionalClassDTO toProfessionalClassDTO(br.com.uvmarker.makerhub_web.institution.domain.entity.ProfessionalClass entity).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getProfessionalId() to: professionalId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getProfessionalId().
+[INFO] -- MapStruct: mapping property: entity.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getNotes().
+[INFO] -- MapStruct: mapping property: entity.getIsActive() to: isActive(java.lang.Boolean).
+[INFO] -- MapStruct: selecting property mapping: entity.getIsActive().
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/institution/mapper/InstitutionCentralMapper.java:[65,26] Unmapped target properties: "professionalRoleId, classId".
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.institution.domain.entity.ProfessionalClass toProfessionalClassEntity(br.com.uvmarker.makerhub_web.institution.dto.ProfessionalClassDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: institutionClass(br.com.uvmarker.makerhub_web.institution.domain.entity.InstitutionClass).
+[INFO] -- MapStruct: mapping property: professionalClassDTO.getClassId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: professionalClassDTO.getClassId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.institution.domain.entity.InstitutionClass #professionalClassDTOToInstitutionClass(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.institution.domain.entity.InstitutionClass #professionalClassDTOToInstitutionClass(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getProfessionalId() to: professionalId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getProfessionalId().
+[INFO] -- MapStruct: mapping property: dto.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getNotes().
+[INFO] -- MapStruct: mapping property: dto.getIsActive() to: isActive(java.lang.Boolean).
+[INFO] -- MapStruct: selecting property mapping: dto.getIsActive().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.institution.dto.ProfessionalClassDTO> toProfessionalClassDTOList(java.util.List<br.com.uvmarker.makerhub_web.institution.domain.entity.ProfessionalClass> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.institution.dto.ProfessionalClassDTO #toProfessionalClassDTO(professionalClass).
+[INFO]  MapStruct: processing: br.com.uvmarker.makerhub_web.person.mapper.PersonCentralMapper.
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.person.dto.PersonDTO toPersonDTO(br.com.uvmarker.makerhub_web.person.domain.entity.Person entity).
+[INFO] -- MapStruct: mapping property: entityTypeId( entity ) to: typeId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityTypeId( entity ).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getUserId() to: userId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getUserId().
+[INFO] -- MapStruct: mapping property: entity.getName() to: name(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getName().
+[INFO] -- MapStruct: mapping property: entity.getBirthDate() to: birthDate(java.time.LocalDate).
+[INFO] -- MapStruct: selecting property mapping: entity.getBirthDate().
+[INFO] -- MapStruct: mapping property: entity.getGender() to: gender(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getGender().
+[INFO] -- MapStruct: mapping property: entity.getDocument() to: document(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getDocument().
+[INFO] -- MapStruct: mapping property: entity.getPersonImageUrl() to: personImageUrl(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getPersonImageUrl().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.person.domain.entity.Person toPersonEntity(br.com.uvmarker.makerhub_web.person.dto.PersonDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: type(br.com.uvmarker.makerhub_web.person.domain.entity.PersonType).
+[INFO] -- MapStruct: mapping property: personDTO.getTypeId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: personDTO.getTypeId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.person.domain.entity.PersonType #personDTOToPersonType(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.person.domain.entity.PersonType #personDTOToPersonType(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getUserId() to: userId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getUserId().
+[INFO] -- MapStruct: mapping property: dto.getName() to: name(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getName().
+[INFO] -- MapStruct: mapping property: dto.getBirthDate() to: birthDate(java.time.LocalDate).
+[INFO] -- MapStruct: selecting property mapping: dto.getBirthDate().
+[INFO] -- MapStruct: mapping property: dto.getGender() to: gender(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getGender().
+[INFO] -- MapStruct: mapping property: dto.getDocument() to: document(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getDocument().
+[INFO] -- MapStruct: mapping property: dto.getPersonImageUrl() to: personImageUrl(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getPersonImageUrl().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.person.dto.PersonDTO> toPersonDTOList(java.util.List<br.com.uvmarker.makerhub_web.person.domain.entity.Person> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.person.dto.PersonDTO #toPersonDTO(person).
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.person.dto.PersonSummaryDTO toPersonSummaryDTO(br.com.uvmarker.makerhub_web.person.domain.entity.Person entity).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getName() to: name(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getName().
+[INFO] -- MapStruct: mapping property: entity.getBirthDate() to: birthDate(java.time.LocalDate).
+[INFO] -- MapStruct: selecting property mapping: entity.getBirthDate().
+[INFO] -- MapStruct: mapping property: entity.getGender() to: gender(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getGender().
+[INFO] -- MapStruct: mapping property: entity.getDocument() to: document(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getDocument().
+[INFO] -- MapStruct: mapping property: entity.getPersonImageUrl() to: personImageUrl(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getPersonImageUrl().
+[INFO] -- MapStruct: mapping property: entity.getUserId() to: userId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getUserId().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.person.dto.GuardianStudentDTO toGuardianStudentDTO(br.com.uvmarker.makerhub_web.person.domain.entity.GuardianStudent entity).
+[INFO] -- MapStruct: mapping property: entityGuardianId( entity ) to: guardianId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityGuardianId( entity ).
+[INFO] -- MapStruct: mapping property: entityStudentId( entity ) to: studentId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityStudentId( entity ).
+[INFO] -- MapStruct: mapping property: entityRelationshipId( entity ) to: relationshipId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityRelationshipId( entity ).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getNotes().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.person.domain.entity.GuardianStudent toGuardianStudentEntity(br.com.uvmarker.makerhub_web.person.dto.GuardianStudentDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: guardian(br.com.uvmarker.makerhub_web.person.domain.entity.Person).
+[INFO] -- MapStruct: mapping property: guardianStudentDTO.getGuardianId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: guardianStudentDTO.getGuardianId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.person.domain.entity.Person #guardianStudentDTOToPerson(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.person.domain.entity.Person #guardianStudentDTOToPerson(dto).
+[INFO] -- MapStruct: mapping property: dto to: student(br.com.uvmarker.makerhub_web.person.domain.entity.Person).
+[INFO] -- MapStruct: mapping property: guardianStudentDTO.getStudentId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: guardianStudentDTO.getStudentId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.person.domain.entity.Person #guardianStudentDTOToPerson1(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.person.domain.entity.Person #guardianStudentDTOToPerson1(dto).
+[INFO] -- MapStruct: mapping property: dto to: relationship(br.com.uvmarker.makerhub_web.person.domain.entity.RelationshipType).
+[INFO] -- MapStruct: mapping property: guardianStudentDTO.getRelationshipId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: guardianStudentDTO.getRelationshipId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.person.domain.entity.RelationshipType #guardianStudentDTOToRelationshipType(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.person.domain.entity.RelationshipType #guardianStudentDTOToRelationshipType(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getNotes().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.person.dto.GuardianStudentDTO> toGuardianStudentDTOList(java.util.List<br.com.uvmarker.makerhub_web.person.domain.entity.GuardianStudent> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.person.dto.GuardianStudentDTO #toGuardianStudentDTO(guardianStudent).
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.person.dto.StudentFileDTO toStudentFileDTO(br.com.uvmarker.makerhub_web.person.domain.entity.StudentFile entity).
+[INFO] -- MapStruct: mapping property: entityStudentId1( entity ) to: studentId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityStudentId1( entity ).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getFileUrl() to: fileUrl(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getFileUrl().
+[INFO] -- MapStruct: mapping property: entity.getDescription() to: description(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getDescription().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.person.domain.entity.StudentFile toStudentFileEntity(br.com.uvmarker.makerhub_web.person.dto.StudentFileDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: student(br.com.uvmarker.makerhub_web.person.domain.entity.Person).
+[INFO] -- MapStruct: mapping property: studentFileDTO.getStudentId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: studentFileDTO.getStudentId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.person.domain.entity.Person #studentFileDTOToPerson(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.person.domain.entity.Person #studentFileDTOToPerson(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getFileUrl() to: fileUrl(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getFileUrl().
+[INFO] -- MapStruct: mapping property: dto.getDescription() to: description(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getDescription().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.person.dto.StudentFileDTO> toStudentFileDTOList(java.util.List<br.com.uvmarker.makerhub_web.person.domain.entity.StudentFile> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.person.dto.StudentFileDTO #toStudentFileDTO(studentFile).
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.person.dto.PersonContactDTO toPersonContactDTO(br.com.uvmarker.makerhub_web.person.domain.entity.PersonContact entity).
+[INFO] -- MapStruct: mapping property: entityPersonId( entity ) to: personId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityPersonId( entity ).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getTypeId() to: typeId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getTypeId().
+[INFO] -- MapStruct: mapping property: entity.getContact() to: contact(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getContact().
+[INFO] -- MapStruct: mapping property: entity.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getNotes().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.person.domain.entity.PersonContact toPersonContactEntity(br.com.uvmarker.makerhub_web.person.dto.PersonContactDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: person(br.com.uvmarker.makerhub_web.person.domain.entity.Person).
+[INFO] -- MapStruct: mapping property: personContactDTO.getPersonId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: personContactDTO.getPersonId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.person.domain.entity.Person #personContactDTOToPerson(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.person.domain.entity.Person #personContactDTOToPerson(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getTypeId() to: typeId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getTypeId().
+[INFO] -- MapStruct: mapping property: dto.getContact() to: contact(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getContact().
+[INFO] -- MapStruct: mapping property: dto.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getNotes().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.person.dto.PersonContactDTO> toPersonContactDTOList(java.util.List<br.com.uvmarker.makerhub_web.person.domain.entity.PersonContact> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.person.dto.PersonContactDTO #toPersonContactDTO(personContact).
+[INFO]  MapStruct: processing: br.com.uvmarker.makerhub_web.evaluation.mapper.EvaluationCentralMapper.
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.evaluation.dto.EvaluationDTO toEvaluationDTO(br.com.uvmarker.makerhub_web.evaluation.domain.entity.Evaluation entity).
+[INFO] -- MapStruct: mapping property: entityTypeId( entity ) to: typeId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityTypeId( entity ).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getStudentId() to: studentId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getStudentId().
+[INFO] -- MapStruct: mapping property: entity.getProfessionalId() to: professionalId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getProfessionalId().
+[INFO] -- MapStruct: mapping property: entity.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getNotes().
+[INFO] -- MapStruct: mapping property: entity.getRate() to: rate(java.lang.Integer).
+[INFO] -- MapStruct: selecting property mapping: entity.getRate().
+[INFO] -- MapStruct: mapping property: entity.getIsActive() to: isActive(java.lang.Boolean).
+[INFO] -- MapStruct: selecting property mapping: entity.getIsActive().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.evaluation.domain.entity.Evaluation toEvaluationEntity(br.com.uvmarker.makerhub_web.evaluation.dto.EvaluationDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: type(br.com.uvmarker.makerhub_web.evaluation.domain.entity.EvaluationType).
+[INFO] -- MapStruct: mapping property: evaluationDTO.getTypeId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: evaluationDTO.getTypeId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.evaluation.domain.entity.EvaluationType #evaluationDTOToEvaluationType(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.evaluation.domain.entity.EvaluationType #evaluationDTOToEvaluationType(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getStudentId() to: studentId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getStudentId().
+[INFO] -- MapStruct: mapping property: dto.getProfessionalId() to: professionalId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getProfessionalId().
+[INFO] -- MapStruct: mapping property: dto.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getNotes().
+[INFO] -- MapStruct: mapping property: dto.getRate() to: rate(java.lang.Integer).
+[INFO] -- MapStruct: selecting property mapping: dto.getRate().
+[INFO] -- MapStruct: mapping property: dto.getIsActive() to: isActive(java.lang.Boolean).
+[INFO] -- MapStruct: selecting property mapping: dto.getIsActive().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.evaluation.dto.EvaluationDTO> toEvaluationDTOList(java.util.List<br.com.uvmarker.makerhub_web.evaluation.domain.entity.Evaluation> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.evaluation.dto.EvaluationDTO #toEvaluationDTO(evaluation).
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.evaluation.dto.ClinicalHistoryDTO toClinicalHistoryDTO(br.com.uvmarker.makerhub_web.evaluation.domain.entity.ClinicalHistory entity).
+[INFO] -- MapStruct: mapping property: entityItemId( entity ) to: itemId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityItemId( entity ).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getStudentId() to: studentId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getStudentId().
+[INFO] -- MapStruct: mapping property: entity.getProfessionalId() to: professionalId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getProfessionalId().
+[INFO] -- MapStruct: mapping property: entity.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getNotes().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.evaluation.domain.entity.ClinicalHistory toClinicalHistoryEntity(br.com.uvmarker.makerhub_web.evaluation.dto.ClinicalHistoryDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: item(br.com.uvmarker.makerhub_web.evaluation.domain.entity.EvaluationItem).
+[INFO] -- MapStruct: mapping property: clinicalHistoryDTO.getItemId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: clinicalHistoryDTO.getItemId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.evaluation.domain.entity.EvaluationItem #clinicalHistoryDTOToEvaluationItem(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.evaluation.domain.entity.EvaluationItem #clinicalHistoryDTOToEvaluationItem(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getStudentId() to: studentId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getStudentId().
+[INFO] -- MapStruct: mapping property: dto.getProfessionalId() to: professionalId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getProfessionalId().
+[INFO] -- MapStruct: mapping property: dto.getNotes() to: notes(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getNotes().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.evaluation.dto.ClinicalHistoryDTO> toClinicalHistoryDTOList(java.util.List<br.com.uvmarker.makerhub_web.evaluation.domain.entity.ClinicalHistory> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.evaluation.dto.ClinicalHistoryDTO #toClinicalHistoryDTO(clinicalHistory).
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.evaluation.dto.EvaluationAnswerDTO toEvaluationAnswerDTO(br.com.uvmarker.makerhub_web.evaluation.domain.entity.EvaluationAnswer entity).
+[INFO] -- MapStruct: mapping property: entityEvaluationId( entity ) to: evaluationId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityEvaluationId( entity ).
+[INFO] -- MapStruct: mapping property: entityQuestionId( entity ) to: questionId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityQuestionId( entity ).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getAnswerText() to: answerText(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getAnswerText().
+[INFO] -- MapStruct: mapping property: entity.getScore() to: score(java.lang.Integer).
+[INFO] -- MapStruct: selecting property mapping: entity.getScore().
+[INFO] -- MapStruct: mapping property: entity.getIsActive() to: isActive(java.lang.Boolean).
+[INFO] -- MapStruct: selecting property mapping: entity.getIsActive().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.evaluation.domain.entity.EvaluationAnswer toEvaluationAnswerEntity(br.com.uvmarker.makerhub_web.evaluation.dto.EvaluationAnswerDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: evaluation(br.com.uvmarker.makerhub_web.evaluation.domain.entity.Evaluation).
+[INFO] -- MapStruct: mapping property: evaluationAnswerDTO.getEvaluationId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: evaluationAnswerDTO.getEvaluationId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.evaluation.domain.entity.Evaluation #evaluationAnswerDTOToEvaluation(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.evaluation.domain.entity.Evaluation #evaluationAnswerDTOToEvaluation(dto).
+[INFO] -- MapStruct: mapping property: dto to: question(br.com.uvmarker.makerhub_web.evaluation.domain.entity.EvaluationQuestion).
+[INFO] -- MapStruct: mapping property: evaluationAnswerDTO.getQuestionId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: evaluationAnswerDTO.getQuestionId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.evaluation.domain.entity.EvaluationQuestion #evaluationAnswerDTOToEvaluationQuestion(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.evaluation.domain.entity.EvaluationQuestion #evaluationAnswerDTOToEvaluationQuestion(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getAnswerText() to: answerText(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getAnswerText().
+[INFO] -- MapStruct: mapping property: dto.getScore() to: score(java.lang.Integer).
+[INFO] -- MapStruct: selecting property mapping: dto.getScore().
+[INFO] -- MapStruct: mapping property: dto.getIsActive() to: isActive(java.lang.Boolean).
+[INFO] -- MapStruct: selecting property mapping: dto.getIsActive().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.evaluation.dto.EvaluationAnswerDTO> toEvaluationAnswerDTOList(java.util.List<br.com.uvmarker.makerhub_web.evaluation.domain.entity.EvaluationAnswer> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.evaluation.dto.EvaluationAnswerDTO #toEvaluationAnswerDTO(evaluationAnswer).
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.evaluation.dto.EvaluationFileDTO toEvaluationFileDTO(br.com.uvmarker.makerhub_web.evaluation.domain.entity.EvaluationFile entity).
+[INFO] -- MapStruct: mapping property: entityEvaluationId1( entity ) to: evaluationId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityEvaluationId1( entity ).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getFileUrl() to: fileUrl(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getFileUrl().
+[INFO] -- MapStruct: mapping property: entity.getDescription() to: description(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getDescription().
+[INFO] -- MapStruct: mapping property: entity.getIsActive() to: isActive(java.lang.Boolean).
+[INFO] -- MapStruct: selecting property mapping: entity.getIsActive().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.evaluation.domain.entity.EvaluationFile toEvaluationFileEntity(br.com.uvmarker.makerhub_web.evaluation.dto.EvaluationFileDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: evaluation(br.com.uvmarker.makerhub_web.evaluation.domain.entity.Evaluation).
+[INFO] -- MapStruct: mapping property: evaluationFileDTO.getEvaluationId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: evaluationFileDTO.getEvaluationId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.evaluation.domain.entity.Evaluation #evaluationFileDTOToEvaluation(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.evaluation.domain.entity.Evaluation #evaluationFileDTOToEvaluation(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getFileUrl() to: fileUrl(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getFileUrl().
+[INFO] -- MapStruct: mapping property: dto.getDescription() to: description(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getDescription().
+[INFO] -- MapStruct: mapping property: dto.getIsActive() to: isActive(java.lang.Boolean).
+[INFO] -- MapStruct: selecting property mapping: dto.getIsActive().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.evaluation.dto.EvaluationFileDTO> toEvaluationFileDTOList(java.util.List<br.com.uvmarker.makerhub_web.evaluation.domain.entity.EvaluationFile> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.evaluation.dto.EvaluationFileDTO #toEvaluationFileDTO(evaluationFile).
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.evaluation.dto.EvaluationQuestionDTO toEvaluationQuestionDTO(br.com.uvmarker.makerhub_web.evaluation.domain.entity.EvaluationQuestion entity).
+[INFO] -- MapStruct: mapping property: entityCategoryId( entity ) to: categoryId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityCategoryId( entity ).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getQuestion() to: question(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getQuestion().
+[INFO] -- MapStruct: mapping property: entity.getIsActive() to: isActive(java.lang.Boolean).
+[INFO] -- MapStruct: selecting property mapping: entity.getIsActive().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.evaluation.domain.entity.EvaluationQuestion toEvaluationQuestionEntity(br.com.uvmarker.makerhub_web.evaluation.dto.EvaluationQuestionDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: category(br.com.uvmarker.makerhub_web.evaluation.domain.entity.QuestionCategory).
+[INFO] -- MapStruct: mapping property: evaluationQuestionDTO.getCategoryId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: evaluationQuestionDTO.getCategoryId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.evaluation.domain.entity.QuestionCategory #evaluationQuestionDTOToQuestionCategory(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.evaluation.domain.entity.QuestionCategory #evaluationQuestionDTOToQuestionCategory(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getQuestion() to: question(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getQuestion().
+[INFO] -- MapStruct: mapping property: dto.getIsActive() to: isActive(java.lang.Boolean).
+[INFO] -- MapStruct: selecting property mapping: dto.getIsActive().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.evaluation.dto.EvaluationQuestionDTO> toEvaluationQuestionDTOList(java.util.List<br.com.uvmarker.makerhub_web.evaluation.domain.entity.EvaluationQuestion> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.evaluation.dto.EvaluationQuestionDTO #toEvaluationQuestionDTO(evaluationQuestion).
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.evaluation.dto.DiagnosticResultDTO toDiagnosticResultDTO(br.com.uvmarker.makerhub_web.evaluation.domain.entity.DiagnosticResult entity).
+[INFO] -- MapStruct: mapping property: entityEvaluationId2( entity ) to: evaluationId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityEvaluationId2( entity ).
+[INFO] -- MapStruct: mapping property: entityClassificationId( entity ) to: classificationId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityClassificationId( entity ).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getProfessionalId() to: professionalId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getProfessionalId().
+[INFO] -- MapStruct: mapping property: entity.getRecommendations() to: recommendations(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getRecommendations().
+[INFO] -- MapStruct: mapping property: entity.getIsActive() to: isActive(java.lang.Boolean).
+[INFO] -- MapStruct: selecting property mapping: entity.getIsActive().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.evaluation.domain.entity.DiagnosticResult toDiagnosticResultEntity(br.com.uvmarker.makerhub_web.evaluation.dto.DiagnosticResultDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: evaluation(br.com.uvmarker.makerhub_web.evaluation.domain.entity.Evaluation).
+[INFO] -- MapStruct: mapping property: diagnosticResultDTO.getEvaluationId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: diagnosticResultDTO.getEvaluationId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.evaluation.domain.entity.Evaluation #diagnosticResultDTOToEvaluation(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.evaluation.domain.entity.Evaluation #diagnosticResultDTOToEvaluation(dto).
+[INFO] -- MapStruct: mapping property: dto to: classification(br.com.uvmarker.makerhub_web.evaluation.domain.entity.Classification).
+[INFO] -- MapStruct: mapping property: diagnosticResultDTO.getClassificationId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: diagnosticResultDTO.getClassificationId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.evaluation.domain.entity.Classification #diagnosticResultDTOToClassification(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.evaluation.domain.entity.Classification #diagnosticResultDTOToClassification(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getProfessionalId() to: professionalId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getProfessionalId().
+[INFO] -- MapStruct: mapping property: dto.getRecommendations() to: recommendations(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getRecommendations().
+[INFO] -- MapStruct: mapping property: dto.getIsActive() to: isActive(java.lang.Boolean).
+[INFO] -- MapStruct: selecting property mapping: dto.getIsActive().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.evaluation.dto.DiagnosticResultDTO> toDiagnosticResultDTOList(java.util.List<br.com.uvmarker.makerhub_web.evaluation.domain.entity.DiagnosticResult> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.evaluation.dto.DiagnosticResultDTO #toDiagnosticResultDTO(diagnosticResult).
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.evaluation.dto.QuestionCategoryDTO toQuestionCategoryDTO(br.com.uvmarker.makerhub_web.evaluation.domain.entity.QuestionCategory entity).
+[INFO] -- MapStruct: mapping property: entityTypeId1( entity ) to: typeId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entityTypeId1( entity ).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getCategoryName() to: categoryName(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getCategoryName().
+[INFO] -- MapStruct: mapping property: entity.getDescription() to: description(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getDescription().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.evaluation.domain.entity.QuestionCategory toQuestionCategoryEntity(br.com.uvmarker.makerhub_web.evaluation.dto.QuestionCategoryDTO dto).
+[INFO] -- MapStruct: mapping property: dto to: type(br.com.uvmarker.makerhub_web.evaluation.domain.entity.EvaluationType).
+[INFO] -- MapStruct: mapping property: questionCategoryDTO.getTypeId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: questionCategoryDTO.getTypeId().
+[INFO] -- MapStruct: creating property mapping: br.com.uvmarker.makerhub_web.evaluation.domain.entity.EvaluationType #questionCategoryDTOToEvaluationType(dto).
+[INFO] -- MapStruct: selecting property mapping: br.com.uvmarker.makerhub_web.evaluation.domain.entity.EvaluationType #questionCategoryDTOToEvaluationType(dto).
+[INFO] -- MapStruct: mapping property: dto.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getId().
+[INFO] -- MapStruct: mapping property: dto.getCategoryName() to: categoryName(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getCategoryName().
+[INFO] -- MapStruct: mapping property: dto.getDescription() to: description(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getDescription().
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.evaluation.dto.QuestionCategoryDTO> toQuestionCategoryDTOList(java.util.List<br.com.uvmarker.makerhub_web.evaluation.domain.entity.QuestionCategory> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.evaluation.dto.QuestionCategoryDTO #toQuestionCategoryDTO(questionCategory).
+[INFO]  MapStruct: processing: br.com.uvmarker.makerhub_web.professional.mapper.ProfessionalSpecialtyMapper.
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.professional.dto.ProfessionalSpecialtyDTO toDTO(br.com.uvmarker.makerhub_web.professional.domain.entity.ProfessionalSpecialty entity).
+[INFO] -- MapStruct: mapping property: entitySpecialtyId( entity ) to: specialtyId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entitySpecialtyId( entity ).
+[INFO] -- MapStruct: mapping property: entity.getPersonId() to: personId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getPersonId().
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getDocumentNr() to: documentNr(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getDocumentNr().
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.professional.domain.entity.ProfessionalSpecialty toEntity(br.com.uvmarker.makerhub_web.professional.dto.ProfessionalSpecialtyDTO dto).
+[INFO] -- MapStruct: mapping property: dto.getPersonId() to: personId(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: dto.getPersonId().
+[INFO] -- MapStruct: mapping property: dto.getDocumentNr() to: documentNr(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getDocumentNr().
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/professional/mapper/ProfessionalSpecialtyMapper.java:[26,27] Unmapped target property: "isActive".
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.professional.dto.ProfessionalSpecialtyDTO> toDtoList(java.util.List<br.com.uvmarker.makerhub_web.professional.domain.entity.ProfessionalSpecialty> entities).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.professional.dto.ProfessionalSpecialtyDTO #toDTO(professionalSpecialty).
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.professional.domain.entity.ProfessionalSpecialty> toEntityList(java.util.List<br.com.uvmarker.makerhub_web.professional.dto.ProfessionalSpecialtyDTO> dtos).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.professional.domain.entity.ProfessionalSpecialty #toEntity(professionalSpecialtyDTO).
+[INFO]  MapStruct: processing: br.com.uvmarker.makerhub_web.professional.mapper.SpecialtyMapper.
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.professional.dto.SpecialtyDTO toDTO(br.com.uvmarker.makerhub_web.professional.domain.entity.Specialty entity).
+[INFO] -- MapStruct: mapping property: entity.getId() to: id(java.lang.Long).
+[INFO] -- MapStruct: selecting property mapping: entity.getId().
+[INFO] -- MapStruct: mapping property: entity.getSpecialtyName() to: specialtyName(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getSpecialtyName().
+[INFO] -- MapStruct: mapping property: entity.getDescription() to: description(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: entity.getDescription().
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/professional/mapper/SpecialtyMapper.java:[15,18] Unmapped target property: "councilId".
+[INFO] - MapStruct: creating bean mapping method implementation for br.com.uvmarker.makerhub_web.professional.domain.entity.Specialty toEntity(br.com.uvmarker.makerhub_web.professional.dto.SpecialtyDTO dto).
+[INFO] -- MapStruct: mapping property: dto.getSpecialtyName() to: specialtyName(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getSpecialtyName().
+[INFO] -- MapStruct: mapping property: dto.getDescription() to: description(java.lang.String).
+[INFO] -- MapStruct: selecting property mapping: dto.getDescription().
+[WARNING] /C:/Projetos/Projeto TI - Universo Marker/workspace_ai/makerhub-web/src/main/java/br/com/uvmarker/makerhub_web/professional/mapper/SpecialtyMapper.java:[21,15] Unmapped target properties: "isActive, createdAt".
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.professional.dto.SpecialtyDTO> toDtoList(java.util.List<br.com.uvmarker.makerhub_web.professional.domain.entity.Specialty> specialties).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.professional.dto.SpecialtyDTO #toDTO(specialty).
+[INFO] - MapStruct: creating iterable mapping method implementation for java.util.List<br.com.uvmarker.makerhub_web.professional.domain.entity.Specialty> toEntityList(java.util.List<br.com.uvmarker.makerhub_web.professional.dto.SpecialtyDTO> specialtyDTOs).
+[INFO] -- MapStruct: selecting element mapping: br.com.uvmarker.makerhub_web.professional.domain.entity.Specialty #toEntity(specialtyDTO).
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.053 s
+[INFO] Finished at: 2025-11-21T17:40:15-03:00
+[INFO] ------------------------------------------------------------------------
