@@ -7,8 +7,10 @@ import ComprehensiveEvaluationForm from './components/ComprehensiveEvaluationFor
 import StudentForm from './components/StudentForm'
 import ModernHeader from './components/ModernHeader'
 import ModernFooter from './components/ModernFooter'
+import CookieConsent from './components/CookieConsent'
 import { Student, DailyEvaluation } from './types'
 import { fetchStudents } from './services/studentService'
+import { authService } from './services/authService'
 
 function App() {
   const navigate = useNavigate();
@@ -35,6 +37,7 @@ function App() {
       } else {
         setStudentList(data);
       }
+      document.body.style.cursor = 'default';
     };
     loadStudents();
 
@@ -97,8 +100,16 @@ function App() {
     setEditingEvaluation(undefined)
   }
 
+  const handleLogout = () => {
+    if (confirm('Deseja realmente sair?')) {
+      authService.logout();
+      navigate('/');
+    }
+  };
+
   return (
     <div style={{ backgroundColor: '#fafafa', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <CookieConsent onAccept={() => console.log('Cookies aceitos')} />
       <ModernHeader title="Universo Maker" showBackButton={false} />
       
       <div style={{ paddingTop: '80px', flex: 1, paddingBottom: '40px' }}>
@@ -124,6 +135,27 @@ function App() {
               }}
             >
               📊 Dashboard
+            </Button>
+            <Button 
+              onClick={handleLogout}
+              style={{
+                backgroundColor: 'transparent',
+                border: 'none',
+                color: '#ff6b6b',
+                fontWeight: 600,
+                fontSize: '14px',
+                padding: '8px 16px',
+                borderRadius: '8px',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#fff0f0';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+              }}
+            >
+              🚪 Sair
             </Button>
             <Button 
               onClick={() => {

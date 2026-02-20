@@ -1,6 +1,6 @@
 import { DailyEvaluation } from '../types';
 
-const API_URL = 'http://localhost:8080';
+const API_URL = 'https://makerhub.api.mongreltech.com.br/api/v1/';
 
 export const fetchEvaluations = async (): Promise<DailyEvaluation[]> => {
   try {
