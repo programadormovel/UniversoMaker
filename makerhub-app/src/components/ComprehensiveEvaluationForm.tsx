@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Form, Button, Card, Row, Col, Accordion } from 'react-bootstrap';
 import { DailyEvaluation } from '../types';
+import { personService } from '../services/personService';
+import { evaluationApiService } from '../services/evaluationApiService';
 import '../styles/autoGrowTextarea.css';
 
 interface ComprehensiveEvaluationFormProps {
@@ -12,6 +14,7 @@ interface ComprehensiveEvaluationFormProps {
 
 const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onCancelEdit }: ComprehensiveEvaluationFormProps) => {
   const textareaRefs = useRef<{ [key: string]: HTMLTextAreaElement | null }>({});
+  const [professionals, setProfessionals] = useState<Array<{id: string, name: string}>>([]);
 
   const autoGrow = (element: HTMLTextAreaElement) => {
     element.style.height = 'auto';
@@ -21,6 +24,7 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
   const [evaluation, setEvaluation] = useState({
     date: new Date().toISOString().split('T')[0],
     professional: '',
+    professionalId: '',
     activityName: '',
     activityObjective: '',
     activitySteps: [] as string[],
@@ -53,6 +57,14 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
     suggestions: '',
     notes: ''
   });
+
+  useEffect(() => {
+    const loadProfessionals = async () => {
+      const data = await personService.fetchProfessionals();
+      setProfessionals(data);
+    };
+    loadProfessionals();
+  }, []);
 
   useEffect(() => {
     Object.values(textareaRefs.current).forEach(textarea => {
@@ -109,13 +121,37 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
     }
     
     console.log('Salvando avaliação:', { studentId, ...evaluation });
-    onSave({
-      studentId,
-      ...evaluation
-    });
+    
+    // Salvar na API
+    const apiPayload = {
+      evaluationName: evaluation.activityName,
+      objective: evaluation.activityObjective,
+      typeId: 1,
+      studentId: parseInt(studentId),
+      professionalId: parseInt(evaluation.professionalId),
+      notes: JSON.stringify(evaluation),
+      rate: 0,
+      isActive: true
+    };
+    
+    evaluationApiService.save(apiPayload)
+      .then(() => {
+        console.log('Avaliação salva na API com sucesso');
+        onSave({
+          studentId,
+          ...evaluation
+        });
+      })
+      .catch(err => {
+        console.error('Erro ao salvar na API:', err);
+        alert('Erro ao salvar avaliação. Tente novamente.');
+        return;
+      });
+    
     setEvaluation({
       date: new Date().toISOString().split('T')[0],
       professional: '',
+      professionalId: '',
       activityName: '',
       activityObjective: '',
       activitySteps: [],
@@ -186,17 +222,20 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
                   <Form.Label className="small fw-bold">Profissional Responsável</Form.Label>
                   <Form.Select
                     size="sm"
-                    value={evaluation.professional}
-                    onChange={(e) => setEvaluation(prev => ({ ...prev, professional: e.target.value }))}
+                    value={evaluation.professionalId}
+                    onChange={(e) => {
+                      const selectedProf = professionals.find(p => p.id === e.target.value);
+                      setEvaluation(prev => ({ 
+                        ...prev, 
+                        professionalId: e.target.value,
+                        professional: selectedProf?.name || ''
+                      }));
+                    }}
                   >
                     <option value="">Selecione o profissional...</option>
-                    <option value="Ana Carolina Silva">Ana Carolina Silva</option>
-                    <option value="Bruno Santos Oliveira">Bruno Santos Oliveira</option>
-                    <option value="Daniel Rodrigues Lima">Daniel Rodrigues Lima</option>
-                    <option value="Eduarda Ferreira Souza">Eduarda Ferreira Souza</option>
-                    <option value="Fernanda Alves Pereira">Fernanda Alves Pereira</option>
-                    <option value="Gabriel Martins Rocha">Gabriel Martins Rocha</option>
-                    <option value="Helena Castro Nunes">Helena Castro Nunes</option>
+                    {professionals.map(prof => (
+                      <option key={prof.id} value={prof.id}>{prof.name}</option>
+                    ))}
                   </Form.Select>
                 </Form.Group>
               </Accordion.Body>
