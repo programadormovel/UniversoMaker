@@ -1,4 +1,5 @@
 import axios, { InternalAxiosRequestConfig } from 'axios';
+import { normalizeApiError } from './apiError';
 
 const api = axios.create({
   baseURL: 'https://makerhub.api.mongreltech.com.br/api/v1', 
@@ -33,16 +34,17 @@ api.interceptors.response.use(
     return response;
   },
   (error) => {
-    console.error('Interceptor - Response Error:', error.response?.status, error.response?.data);
-    
-    if (error.response?.status === 401) {
+    const normalizedError = normalizeApiError(error);
+    console.error('Interceptor - Response Error:', normalizedError.code, normalizedError.status, normalizedError.endpoint);
+
+    if (normalizedError.code === 'UNAUTHORIZED') {
       localStorage.removeItem('makerhub_authenticated');
       localStorage.removeItem('makerhub_token');
       localStorage.removeItem('makerhub_user');
       window.location.href = '/';
     }
-    
-    return Promise.reject(error);
+
+    return Promise.reject(normalizedError);
   }
 );
 

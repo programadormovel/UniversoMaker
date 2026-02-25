@@ -5,7 +5,7 @@ import { Student, DailyEvaluation } from '../types';
 import ModernHeader from '../components/ModernHeader';
 import ModernFooter from '../components/ModernFooter';
 import { fetchStudents } from '../services/studentService';
-import { fetchEvaluations } from '../services/evaluationService';
+import { fetchEvaluationsByStudentIds } from '../services/evaluationService';
 
 const PEIPage = () => {
   const location = useLocation();
@@ -21,7 +21,8 @@ const PEIPage = () => {
       try {
         const studentsData = await fetchStudents();
         setStudents(studentsData);
-        const evaluationsData = await fetchEvaluations();
+
+        const evaluationsData = await fetchEvaluationsByStudentIds(studentsData.map((student) => student.id));
         setEvaluations(evaluationsData);
       } catch (error) {
         console.error('Erro ao carregar dados:', error);
@@ -29,6 +30,7 @@ const PEIPage = () => {
         setLoading(false);
       }
     };
+
     loadData();
 
     if ((location.state as any)?.studentId) {
@@ -38,15 +40,16 @@ const PEIPage = () => {
 
   useEffect(() => {
     if (selectedStudent) {
-      const filtered = evaluations.filter(e => e.studentId === selectedStudent);
+      const filtered = evaluations.filter((evaluation) => evaluation.studentId === selectedStudent);
       setStudentEvaluations(filtered);
-    } else {
-      setStudentEvaluations([]);
+      return;
     }
+
+    setStudentEvaluations([]);
   }, [selectedStudent, evaluations]);
 
   const getStudentName = () => {
-    const student = students.find(s => s.id === selectedStudent);
+    const student = students.find((entry) => entry.id === selectedStudent);
     return student ? student.name : '';
   };
 
@@ -54,12 +57,12 @@ const PEIPage = () => {
     if (studentEvaluations.length === 0) return [];
 
     const suggestions = studentEvaluations
-      .map(e => e.suggestions)
-      .filter(s => s)
+      .map((evaluation) => evaluation.suggestions)
+      .filter((entry) => entry)
       .join(', ')
       .split(',')
-      .map(s => s.trim())
-      .filter(s => s);
+      .map((entry) => entry.trim())
+      .filter((entry) => entry);
 
     return [...new Set(suggestions)];
   };
@@ -68,12 +71,12 @@ const PEIPage = () => {
     if (studentEvaluations.length === 0) return [];
 
     const points = studentEvaluations
-      .map(e => e.attentionPoints)
-      .filter(s => s)
+      .map((evaluation) => evaluation.attentionPoints)
+      .filter((entry) => entry)
       .join(', ')
       .split(',')
-      .map(s => s.trim())
-      .filter(s => s);
+      .map((entry) => entry.trim())
+      .filter((entry) => entry);
 
     return [...new Set(points)];
   };
@@ -82,12 +85,12 @@ const PEIPage = () => {
     if (studentEvaluations.length === 0) return [];
 
     const strengths = studentEvaluations
-      .map(e => e.strengths)
-      .filter(s => s)
+      .map((evaluation) => evaluation.strengths)
+      .filter((entry) => entry)
       .join(', ')
       .split(',')
-      .map(s => s.trim())
-      .filter(s => s);
+      .map((entry) => entry.trim())
+      .filter((entry) => entry);
 
     return [...new Set(strengths)];
   };
@@ -104,83 +107,95 @@ const PEIPage = () => {
 
   return (
     <div style={{ backgroundColor: '#fafafa', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <ModernHeader title="Sugestões PEI" backTo="/dashboard" />
-      
+      <ModernHeader title="Sugestoes PEI" backTo="/dashboard" />
+
       <div style={{ paddingTop: '80px', paddingBottom: '40px', flex: 1 }}>
-      <Container style={{ maxWidth: '935px' }}>
-        <Form.Group className="mb-4">
-          <Form.Label className="fw-bold">Selecionar Aluno</Form.Label>
-          <Form.Select value={selectedStudent} onChange={(e) => setSelectedStudent(e.target.value)}>
-            <option value="">Escolha um aluno...</option>
-            {students.map(student => (
-              <option key={student.id} value={student.id}>
-                {student.name} - {student.diagnosis}
-              </option>
-            ))}
-          </Form.Select>
-        </Form.Group>
-        
-        {selectedStudent && studentEvaluations.length > 0 && (
-          <>
-            <h5 className="mb-3">Plano Educacional Individualizado - {getStudentName()}</h5>
-            
-            <Card className="mb-4 border-0 shadow-sm">
-              <Card.Header className="bg-white border-bottom py-3">
-                <h6 className="mb-0 fw-bold text-success">✓ Pontos Fortes Identificados</h6>
-              </Card.Header>
-              <Card.Body>
-                <ListGroup variant="flush">
-                  {getStrengths().map((strength, idx) => (
-                    <ListGroup.Item key={idx} className="border-0 px-0 py-2">• {strength}</ListGroup.Item>
-                  ))}
-                </ListGroup>
-              </Card.Body>
-            </Card>
+        <Container style={{ maxWidth: '935px' }}>
+          <Form.Group className="mb-4">
+            <Form.Label className="fw-bold">Selecionar Aluno</Form.Label>
+            <Form.Select value={selectedStudent} onChange={(e) => setSelectedStudent(e.target.value)}>
+              <option value="">Escolha um aluno...</option>
+              {students.map((student) => (
+                <option key={student.id} value={student.id}>
+                  {student.name} - {student.diagnosis}
+                </option>
+              ))}
+            </Form.Select>
+          </Form.Group>
 
-            <Card className="mb-4 border-0 shadow-sm">
-              <Card.Header className="bg-white border-bottom py-3">
-                <h6 className="mb-0 fw-bold text-warning">⚠️ Áreas de Atenção</h6>
-              </Card.Header>
-              <Card.Body>
-                <ListGroup variant="flush">
-                  {getAttentionPoints().map((point, idx) => (
-                    <ListGroup.Item key={idx} className="border-0 px-0 py-2">• {point}</ListGroup.Item>
-                  ))}
-                </ListGroup>
-              </Card.Body>
-            </Card>
+          {selectedStudent && studentEvaluations.length > 0 && (
+            <>
+              <h5 className="mb-3">Plano Educacional Individualizado - {getStudentName()}</h5>
 
-            <Card className="mb-4 border-0 shadow-sm">
-              <Card.Header className="bg-white border-bottom py-3">
-                <h6 className="mb-0 fw-bold text-primary">🎯 Sugestões de Metas para o PEI</h6>
-              </Card.Header>
-              <Card.Body>
-                <ListGroup variant="flush">
-                  {generatePEISuggestions().map((suggestion, idx) => (
-                    <ListGroup.Item key={idx} className="border-0 px-0 py-2">• {suggestion}</ListGroup.Item>
-                  ))}
-                </ListGroup>
-              </Card.Body>
-            </Card>
+              <Card className="mb-4 border-0 shadow-sm">
+                <Card.Header className="bg-white border-bottom py-3">
+                  <h6 className="mb-0 fw-bold text-success">Pontos Fortes Identificados</h6>
+                </Card.Header>
+                <Card.Body>
+                  <ListGroup variant="flush">
+                    {getStrengths().map((strength, idx) => (
+                      <ListGroup.Item key={idx} className="border-0 px-0 py-2">
+                        - {strength}
+                      </ListGroup.Item>
+                    ))}
+                  </ListGroup>
+                </Card.Body>
+              </Card>
 
-            <Card className="border-0 shadow-sm mt-4">
-              <Card.Header className="bg-white border-bottom py-3">
-                <h6 className="mb-0 fw-bold text-muted">📊 Resumo das Avaliações</h6>
-              </Card.Header>
-              <Card.Body>
-                <p><strong>Total de avaliações:</strong> {studentEvaluations.length}</p>
-                <p><strong>Período:</strong> {new Date(studentEvaluations[0].date).toLocaleDateString('pt-BR')} até {new Date(studentEvaluations[studentEvaluations.length - 1].date).toLocaleDateString('pt-BR')}</p>
-              </Card.Body>
-            </Card>
-          </>
-        )}
+              <Card className="mb-4 border-0 shadow-sm">
+                <Card.Header className="bg-white border-bottom py-3">
+                  <h6 className="mb-0 fw-bold text-warning">Areas de Atencao</h6>
+                </Card.Header>
+                <Card.Body>
+                  <ListGroup variant="flush">
+                    {getAttentionPoints().map((point, idx) => (
+                      <ListGroup.Item key={idx} className="border-0 px-0 py-2">
+                        - {point}
+                      </ListGroup.Item>
+                    ))}
+                  </ListGroup>
+                </Card.Body>
+              </Card>
 
-        {selectedStudent && studentEvaluations.length === 0 && (
-          <div className="alert alert-light border text-center mt-4">
-            Nenhuma avaliação encontrada para gerar sugestões de PEI.
-          </div>
-        )}
-      </Container>
+              <Card className="mb-4 border-0 shadow-sm">
+                <Card.Header className="bg-white border-bottom py-3">
+                  <h6 className="mb-0 fw-bold text-primary">Sugestoes de Metas para o PEI</h6>
+                </Card.Header>
+                <Card.Body>
+                  <ListGroup variant="flush">
+                    {generatePEISuggestions().map((suggestion, idx) => (
+                      <ListGroup.Item key={idx} className="border-0 px-0 py-2">
+                        - {suggestion}
+                      </ListGroup.Item>
+                    ))}
+                  </ListGroup>
+                </Card.Body>
+              </Card>
+
+              <Card className="border-0 shadow-sm mt-4">
+                <Card.Header className="bg-white border-bottom py-3">
+                  <h6 className="mb-0 fw-bold text-muted">Resumo das Avaliacoes</h6>
+                </Card.Header>
+                <Card.Body>
+                  <p>
+                    <strong>Total de avaliacoes:</strong> {studentEvaluations.length}
+                  </p>
+                  <p>
+                    <strong>Periodo:</strong>{' '}
+                    {new Date(studentEvaluations[0].date).toLocaleDateString('pt-BR')} ate{' '}
+                    {new Date(studentEvaluations[studentEvaluations.length - 1].date).toLocaleDateString('pt-BR')}
+                  </p>
+                </Card.Body>
+              </Card>
+            </>
+          )}
+
+          {selectedStudent && studentEvaluations.length === 0 && (
+            <div className="alert alert-light border text-center mt-4">
+              Nenhuma avaliacao encontrada para gerar sugestoes de PEI.
+            </div>
+          )}
+        </Container>
       </div>
 
       <ModernFooter />
