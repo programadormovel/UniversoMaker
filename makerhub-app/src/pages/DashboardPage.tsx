@@ -123,7 +123,7 @@ const DashboardPage = () => {
                             <Button
                               size="sm"
                               variant="link"
-                              onClick={() => navigate('/', { state: { editEvaluation: evaluation } })}
+                              onClick={() => navigate('/app', { state: { editEvaluation: evaluation } })}
                               className="text-decoration-none p-0 mx-1"
                             >
                               <span style={{ fontSize: '1.1rem' }}>Editar</span>

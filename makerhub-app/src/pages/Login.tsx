@@ -2,6 +2,7 @@ import React, { useState, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { authService } from '../services/authService';
 import AlertMessage from '../components/AlertMessage';
+import { ApiError, getApiErrorMessage } from '../services/apiError';
 import './Login.css';
 
 const Login: React.FC = () => {
@@ -37,9 +38,21 @@ const Login: React.FC = () => {
       
       console.log('Navegando para /app...');
       navigate('/app', { replace: true });
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Erro no login:', err);
-      const errorMessage = err.response?.data?.message || 'Falha no login. Verifique suas credenciais.';
+
+      const apiError = err as Partial<ApiError>;
+      const fallbackMessage = 'Falha no login. Verifique suas credenciais.';
+      let errorMessage = getApiErrorMessage(err, fallbackMessage);
+
+      if (apiError?.code === 'NETWORK_ERROR') {
+        errorMessage = 'Servidor indisponível no momento. Verifique sua conexão e tente novamente em alguns instantes.';
+      } else if (apiError?.code === 'TIMEOUT') {
+        errorMessage = 'A conexão com o servidor expirou. Tente novamente.';
+      } else if (apiError?.code === 'SERVER_ERROR') {
+        errorMessage = 'O servidor está com instabilidade. Tente novamente em alguns minutos.';
+      }
+
       setError(errorMessage);
       setLoading(false);
       document.body.style.cursor = 'default';

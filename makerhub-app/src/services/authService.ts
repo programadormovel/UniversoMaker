@@ -6,63 +6,55 @@ interface LoginCredentials {
 }
 
 interface LoginResponse {
-  user?: any;
+  user?: unknown;
   message?: string;
 }
+
+const SESSION_FLAG = 'makerhub_authenticated';
+const USER_KEY = 'makerhub_user';
+
+const saveLocalSession = (user?: unknown) => {
+  localStorage.setItem(SESSION_FLAG, 'true');
+  if (user) {
+    localStorage.setItem(USER_KEY, JSON.stringify(user));
+  }
+};
+
+const clearLocalSession = () => {
+  localStorage.removeItem(SESSION_FLAG);
+  localStorage.removeItem('makerhub_token');
+  localStorage.removeItem(USER_KEY);
+};
 
 export const authService = {
   login: async (credentials: LoginCredentials): Promise<LoginResponse> => {
     console.log('authService.login chamado com:', credentials);
-    
-    const response = await api.post<LoginResponse>('/auth/login', credentials);
-    
-    console.log('Resposta da API:', response.data);
-    console.log('Headers Set-Cookie:', response.headers['set-cookie']);
-    
-    // Extrair token do header Set-Cookie
-    const setCookieHeader = response.headers['set-cookie'];
-    let token = null;
-    
-    if (setCookieHeader) {
-      const cookieString = Array.isArray(setCookieHeader) ? setCookieHeader[0] : setCookieHeader;
-      const match = cookieString.match(/accessToken=([^;]+)/);
-      if (match) {
-        token = match[1];
-        console.log('Token extraído do Set-Cookie:', token);
-      }
+
+    try {
+      const response = await api.post<LoginResponse>('/auth/login', credentials);
+      console.log('Resposta da API:', response.data);
+
+      const userPayload = response.data?.user ?? { username: credentials.username };
+      saveLocalSession(userPayload);
+
+      return response.data;
+    } catch (error) {
+      clearLocalSession();
+      throw error;
     }
-    
-    if (token) {
-      localStorage.setItem('makerhub_token', token);
-      localStorage.setItem('makerhub_authenticated', 'true');
-      console.log('Token salvo no localStorage');
-    } else {
-      // Fallback: marcar como autenticado mesmo sem conseguir extrair o token
-      localStorage.setItem('makerhub_authenticated', 'true');
-      console.log('Autenticação marcada sem token extraído');
-    }
-    
-    if (response.data.user) {
-      localStorage.setItem('makerhub_user', JSON.stringify(response.data.user));
-      console.log('Usuário salvo:', response.data.user);
-    }
-    
-    return response.data;
   },
 
   logout: () => {
-    localStorage.removeItem('makerhub_authenticated');
-    localStorage.removeItem('makerhub_token');
-    localStorage.removeItem('makerhub_user');
-    api.post('/auth/logout').catch(err => console.error('Erro no logout:', err));
+    clearLocalSession();
+    api.post('/auth/logout').catch((err) => console.error('Erro no logout:', err));
   },
 
   getToken: (): string | null => {
-    return localStorage.getItem('makerhub_token');
+    return null;
   },
 
   isAuthenticated: (): boolean => {
-    const isAuth = localStorage.getItem('makerhub_authenticated') === 'true';
+    const isAuth = localStorage.getItem(SESSION_FLAG) === 'true';
     console.log('isAuthenticated:', isAuth);
     return isAuth;
   }

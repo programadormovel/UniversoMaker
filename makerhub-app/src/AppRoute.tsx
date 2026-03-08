@@ -12,8 +12,6 @@ interface PrivateRouteProps {
 
 const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
   const isAuth = authService.isAuthenticated();
-  console.log('PrivateRoute - isAuthenticated:', isAuth);
-  console.log('PrivateRoute - token:', authService.getToken());
   return isAuth ? children : <Navigate to="/" replace />;
 };
 
@@ -22,9 +20,11 @@ const AppRoute = () => {
     return (
         <Routes>
             <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/app" element={<PrivateRoute><App /></PrivateRoute>} />
             <Route path="/dashboard" element={<PrivateRoute><DashboardPage /></PrivateRoute>} />
             <Route path="/pei" element={<PrivateRoute><PEIPage /></PrivateRoute>} />
+            <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
     )
 }

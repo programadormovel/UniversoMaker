@@ -1,4 +1,4 @@
-import axios, { InternalAxiosRequestConfig } from 'axios';
+import axios from 'axios';
 import { normalizeApiError } from './apiError';
 
 const api = axios.create({
@@ -6,20 +6,13 @@ const api = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 10000,
+  timeout: 15000,
   withCredentials: true,
 });
 
 api.interceptors.request.use(
-  async (config: InternalAxiosRequestConfig) => {
+  async (config) => {
     console.log('Interceptor - Request:', config.method?.toUpperCase(), config.url);
-    
-    const token = localStorage.getItem('makerhub_token');
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-      console.log('Token adicionado ao header Authorization');
-    }
-    
     return config;
   },
   (error) => {
@@ -36,14 +29,6 @@ api.interceptors.response.use(
   (error) => {
     const normalizedError = normalizeApiError(error);
     console.error('Interceptor - Response Error:', normalizedError.code, normalizedError.status, normalizedError.endpoint);
-
-    if (normalizedError.code === 'UNAUTHORIZED') {
-      localStorage.removeItem('makerhub_authenticated');
-      localStorage.removeItem('makerhub_token');
-      localStorage.removeItem('makerhub_user');
-      window.location.href = '/';
-    }
-
     return Promise.reject(normalizedError);
   }
 );

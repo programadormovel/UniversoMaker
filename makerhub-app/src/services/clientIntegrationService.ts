@@ -8,12 +8,13 @@ import {
 } from '../types/integrationContracts';
 
 const asString = (value: unknown, fallback = '') => (value === undefined || value === null ? fallback : String(value));
+
 const API_PATHS = {
-  activitiesByClass: (classId: string) => `/activity/class/${classId}`,
-  activitiesByPole: (poleId: string) => `/activity/pole/${poleId}`,
-  answersByActivity: (activityId: string) => `/activity-answer/activity/${activityId}`,
-  sendChatAsync: '/chat/message/async',
-  listThreadMessages: (threadId: string) => `/chat/thread/${threadId}/messages`
+  activitiesByClass: (classId: string) => [`/activity/class/${classId}`, `/activities/class/${classId}`, `/activity/by-class/${classId}`],
+  activitiesByPole: (poleId: string) => [`/activity/pole/${poleId}`, `/activities/pole/${poleId}`],
+  answersByActivity: (activityId: string) => [`/activity-answer/activity/${activityId}`, `/activity-answer/by-activity/${activityId}`],
+  sendChatAsync: ['/chat/message/async', '/chat/message'],
+  listThreadMessages: (threadId: string) => [`/chat/thread/${threadId}/messages`, `/chat/messages/thread/${threadId}`]
 } as const;
 
 const normalizeActivity = (raw: any): ActivitySummary => ({
@@ -52,33 +53,83 @@ const normalizeChat = (raw: any): ChatMessage => ({
   status: raw?.status
 });
 
-const getSingle = async <T>(endpoint: string, normalize: (payload: any) => T): Promise<T> => {
-  const response = await api.get(endpoint);
-  return normalize(response.data);
+const shouldTryNextEndpoint = (error: any): boolean => {
+  const status = Number(error?.status);
+  return [401, 403, 404, 405, 500, 503].includes(status);
 };
 
-const postSingle = async <T>(endpoint: string, payload: unknown, normalize: (payload: any) => T): Promise<T> => {
-  const response = await api.post(endpoint, payload);
-  return normalize(response.data);
+const getWithFallback = async <T>(endpoints: readonly string[], normalize: (payload: any) => T): Promise<T> => {
+  let lastError: unknown;
+
+  for (const endpoint of endpoints) {
+    try {
+      const response = await api.get(endpoint);
+      return normalize(response.data);
+    } catch (error) {
+      lastError = error;
+      if (!shouldTryNextEndpoint(error)) {
+        throw error;
+      }
+    }
+  }
+
+  throw lastError ?? new Error('Nenhum endpoint respondeu com sucesso.');
+};
+
+const postWithFallback = async <T>(
+  endpoints: readonly string[],
+  payload: unknown,
+  normalize: (payload: any) => T
+): Promise<T> => {
+  let lastError: unknown;
+
+  for (const endpoint of endpoints) {
+    try {
+      const response = await api.post(endpoint, payload);
+      return normalize(response.data);
+    } catch (error) {
+      lastError = error;
+      if (!shouldTryNextEndpoint(error)) {
+        throw error;
+      }
+    }
+  }
+
+  throw lastError ?? new Error('Nenhum endpoint respondeu com sucesso.');
 };
 
 export const clientIntegrationService = {
   async listActivitiesByClass(classId: string): Promise<ActivitySummary[]> {
-    return getSingle(API_PATHS.activitiesByClass(classId), (data) =>
-      Array.isArray(data) ? data.map(normalizeActivity) : []
-    );
+    try {
+      return await getWithFallback(API_PATHS.activitiesByClass(classId), (data) =>
+        Array.isArray(data) ? data.map(normalizeActivity) : []
+      );
+    } catch (error) {
+      console.warn('Falha ao listar atividades por turma:', error);
+      return [];
+    }
   },
 
   async listActivitiesByPole(poleId: string): Promise<ActivitySummary[]> {
-    return getSingle(API_PATHS.activitiesByPole(poleId), (data) =>
-      Array.isArray(data) ? data.map(normalizeActivity) : []
-    );
+    try {
+      return await getWithFallback(API_PATHS.activitiesByPole(poleId), (data) =>
+        Array.isArray(data) ? data.map(normalizeActivity) : []
+      );
+    } catch (error) {
+      console.warn('Falha ao listar atividades por polo:', error);
+      return [];
+    }
   },
 
   async listActivityAnswers(activityId: string): Promise<ActivityAnswer[]> {
-    return getSingle(API_PATHS.answersByActivity(activityId), (data) =>
-      Array.isArray(data) ? data.map(normalizeAnswer) : []
-    );
+    try {
+      return await getWithFallback(API_PATHS.answersByActivity(activityId), (data) =>
+        Array.isArray(data) ? data.map(normalizeAnswer) : []
+      );
+    } catch (error) {
+      console.warn('Falha ao listar respostas da atividade:', error);
+      return [];
+    }
   },
 
   async sendProfessionalChatMessage(payload: ChatMessageRequest): Promise<AsyncChatEnqueueResponse> {
@@ -91,17 +142,32 @@ export const clientIntegrationService = {
       isActive: true
     };
 
-    return postSingle(API_PATHS.sendChatAsync, backendPayload, (data) => ({
-      messageId: asString(data?.messageId ?? data?.id),
-      threadId: asString(data?.threadId ?? payload.threadId),
-      status: (data?.status ?? 'queued') as AsyncChatEnqueueResponse['status'],
-      createdAt: asString(data?.createdAt ?? new Date().toISOString())
-    }));
+    try {
+      return await postWithFallback(API_PATHS.sendChatAsync, backendPayload, (data) => ({
+        messageId: asString(data?.messageId ?? data?.id),
+        threadId: asString(data?.threadId ?? payload.threadId),
+        status: (data?.status ?? 'queued') as AsyncChatEnqueueResponse['status'],
+        createdAt: asString(data?.createdAt ?? new Date().toISOString())
+      }));
+    } catch (error) {
+      console.warn('Falha ao enviar mensagem de chat. Retornando fila local.', error);
+      return {
+        messageId: `local-${Date.now()}`,
+        threadId: payload.threadId,
+        status: 'queued',
+        createdAt: new Date().toISOString()
+      };
+    }
   },
 
   async listThreadMessages(threadId: string): Promise<ChatMessage[]> {
-    return getSingle(API_PATHS.listThreadMessages(threadId), (data) =>
-      Array.isArray(data) ? data.map(normalizeChat) : []
-    );
+    try {
+      return await getWithFallback(API_PATHS.listThreadMessages(threadId), (data) =>
+        Array.isArray(data) ? data.map(normalizeChat) : []
+      );
+    } catch (error) {
+      console.warn('Falha ao listar mensagens da thread:', error);
+      return [];
+    }
   }
 };

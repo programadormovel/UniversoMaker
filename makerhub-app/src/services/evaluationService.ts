@@ -115,7 +115,7 @@ export const fetchEvaluations = async (): Promise<DailyEvaluation[]> => {
 };
 
 export const deleteEvaluation = async (id: string): Promise<boolean> => {
-  const endpoints = [`/evaluation/${id}`, `/evaluations/${id}`, `/evaluation/delete/${id}`];
+  const endpoints = [`/evaluation/${id}`, `/evaluation/delete/${id}`, `/evaluations/${id}`];
   for (const endpoint of endpoints) {
     try {
       await api.delete(endpoint);
@@ -131,11 +131,11 @@ export const createEvaluation = async (
   evaluation: Omit<DailyEvaluation, 'id'>
 ): Promise<DailyEvaluation | null> => {
   try {
-    const response = await api.post('/evaluations', evaluation);
+    const response = await api.post('/evaluation/save', evaluation);
     return normalizeEvaluation(response.data);
   } catch {
     try {
-      const response = await api.post('/evaluation/save', evaluation);
+      const response = await api.post('/evaluations', evaluation);
       return normalizeEvaluation(response.data);
     } catch (error) {
       console.error('Erro ao salvar avaliação:', error);
