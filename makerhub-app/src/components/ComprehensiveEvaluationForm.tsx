@@ -117,11 +117,11 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
     e.preventDefault();
 
     if (!evaluation.professional || !evaluation.activityName) {
-      alert('Preencha os campos obrigatorios: Profissional Responsavel e Nome da Atividade');
+      alert('Preencha os campos obrigatórios: Profissional Responsável e Nome da Atividade');
       return;
     }
 
-    console.log('Salvando avaliacao:', { studentId, ...evaluation });
+    console.log('Salvando avaliação:', { studentId, ...evaluation });
 
     const normalizeValue = (value: unknown): string => {
       if (Array.isArray(value)) {
@@ -140,12 +140,12 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
       const parsedProfessionalId = Number(evaluation.professionalId || selectedProfessional?.id);
 
       if (!Number.isInteger(parsedStudentId) || parsedStudentId <= 0) {
-        alert('Aluno invalido para salvar a avaliacao.');
+        alert('Aluno inválido para salvar a avaliação.');
         return;
       }
 
       if (!Number.isInteger(parsedProfessionalId) || parsedProfessionalId <= 0) {
-        alert('Selecione um profissional responsavel valido.');
+        alert('Selecione um profissional responsável válido.');
         return;
       }
 
@@ -153,9 +153,9 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
         { name: 'Regulacao Emocional', value: evaluation.emotionalRegulation, observation: evaluation.emotionalStrategies },
         { name: 'Interacao Social', value: evaluation.socialInteraction, observation: evaluation.socialConflicts },
         { name: 'Comunicacao - Pedido', value: evaluation.communicationRequest, observation: '' },
-        { name: 'Comunicacao - Explicacao', value: evaluation.communicationExplanation, observation: evaluation.vocabulary },
-        { name: 'Duracao da Atencao', value: evaluation.attentionDuration, observation: '' },
-        { name: 'Compreensao de Instrucoes', value: evaluation.instructionComprehension, observation: '' },
+        { name: 'Comunicação - Explicação', value: evaluation.communicationExplanation, observation: evaluation.vocabulary },
+        { name: 'Duração da Atenção', value: evaluation.attentionDuration, observation: '' },
+        { name: 'Compreensão de Instruções', value: evaluation.instructionComprehension, observation: '' },
         { name: 'Sequenciamento de Etapas', value: evaluation.stepSequencing, observation: '' },
         { name: 'Motricidade Fina', value: evaluation.fineMotor, observation: evaluation.motorObservations },
         { name: 'Motricidade Grossa', value: evaluation.grossMotor, observation: '' },
@@ -169,7 +169,7 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
         { name: 'Pontos de Atencao', value: evaluation.attentionPoints, observation: '' },
         { name: 'Comportamentos Relevantes', value: evaluation.relevantBehaviors, observation: '' },
         { name: 'Sugestoes', value: evaluation.suggestions, observation: '' },
-        { name: 'Observacoes Gerais', value: evaluation.notes, observation: '' }
+        { name: 'Observações Gerais', value: evaluation.notes, observation: '' }
       ].map((item) => ({
         name: item.name,
         value: normalizeValue(item.value),
@@ -180,6 +180,7 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
         date: evaluation.date,
         studentId: parsedStudentId,
         professionalId: parsedProfessionalId,
+        professionalName: evaluation.professional,
         activityName: evaluation.activityName,
         activityObjective: evaluation.activityObjective,
         activitySteps: evaluation.activitySteps,
@@ -191,11 +192,12 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
         `Data: ${evaluation.date}`,
         `AlunoId: ${parsedStudentId}`,
         `ProfissionalId: ${parsedProfessionalId}`,
+        `ProfissionalNome: ${normalizeValue(evaluation.professional)}`,
         `Atividade: ${evaluation.activityName}`,
         `Objetivo: ${normalizeValue(evaluation.activityObjective)}`,
         `Etapas: ${normalizeValue(evaluation.activitySteps)}`,
         `Complexidade: ${evaluation.complexityLevel}`,
-        '--- Itens da avaliacao ---',
+        '--- Itens da avaliação ---',
         ...items.map((item) =>
           `- ${item.name}: ${item.value}${item.observation ? ` | obs: ${item.observation}` : ''}`
         ),
@@ -216,11 +218,11 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
 
       const savedEvaluation = await evaluationApiService.createEvaluation(evaluationPayload);
       if (!savedEvaluation?.id) {
-        throw new Error('A API nao retornou o id da avaliacao criada.');
+        throw new Error('A API não retornou o id da avaliação criada.');
       }
 
-      console.log('Avaliacao criada com ID:', savedEvaluation.id);
-      alert('Avaliacao salva com sucesso. Todos os itens foram registrados no snapshot da avaliacao.');
+      console.log('Avaliação criada com ID:', savedEvaluation.id);
+      alert('Avaliação salva com sucesso. Todos os itens foram registrados no snapshot da avaliação.');
 
       onSave({
         studentId,
@@ -264,8 +266,8 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
         notes: ''
       });
     } catch (err) {
-      console.error('Erro ao salvar avaliacao:', err);
-      alert('Erro ao salvar avaliacao. Verifique os dados e tente novamente.');
+      console.error('Erro ao salvar avaliação:', err);
+      alert('Erro ao salvar avaliação. Verifique os dados e tente novamente.');
     }
   };
 
@@ -283,7 +285,7 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
       <Card.Header className="bg-light py-2">
         <div className="d-flex justify-content-between align-items-center">
           <h6 className="mb-0">
-            {editingEvaluation ? '? Atualizar Avalia??o' : '? Salvar Avalia??o'} - Sala Maker
+            {editingEvaluation ? 'Atualizar Avaliação' : 'Salvar Avaliação'} - Sala Maker
           </h6>
           <Form.Control
             type="date"
@@ -587,7 +589,7 @@ const ComprehensiveEvaluationForm = ({ studentId, onSave, editingEvaluation, onC
               </Button>
             )}
             <Button type="submit" variant="primary" className="flex-fill">
-              {editingEvaluation ? '? Atualizar Avalia??o' : '? Salvar Avalia??o'}
+              {editingEvaluation ? 'Atualizar Avaliação' : 'Salvar Avaliação'}
             </Button>
           </div>
         </Form>

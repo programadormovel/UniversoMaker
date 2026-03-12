@@ -17,7 +17,7 @@ const config: CapacitorConfig = {
       showSpinner: false
     },
     Camera: {
-      permissions: ['camera', 'photos']
+      permissions: ['camera']
     },
     Geolocation: {
       permissions: ['location']

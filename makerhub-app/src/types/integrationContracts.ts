@@ -1,4 +1,4 @@
-﻿export type ActivityStatus = 'assigned' | 'in_progress' | 'submitted' | 'reviewed';
+export type ActivityStatus = 'assigned' | 'in_progress' | 'submitted' | 'reviewed';
 
 export interface ActivitySummary {
   id: string;

@@ -1,14 +1,15 @@
 {
   "name": "universo-maker",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.3",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "encoding:check": "node scripts/check-encoding.mjs",
+    "build": "npm run encoding:check && tsc && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "type-check": "tsc --noEmit",
+    "type-check": "npm run encoding:check && tsc --noEmit",
     "build:mobile": "npm run build && npx cap sync",
     "build:android": "npm run build && npx cap sync android && npx cap open android",
     "android": "npx cap open android",

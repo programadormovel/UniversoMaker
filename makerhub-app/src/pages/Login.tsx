@@ -5,11 +5,13 @@ import AlertMessage from '../components/AlertMessage';
 import { ApiError, getApiErrorMessage } from '../services/apiError';
 import './Login.css';
 
+const PRIVACY_CONSENT_STORAGE_KEY = 'privacy_policy_consent';
+
 const Login: React.FC = () => {
   const [username, setUsername] = useState<string>(() => localStorage.getItem('saved_username') || '');
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string>('');
-  const [consent, setConsent] = useState<boolean>(false);
+  const [consent, setConsent] = useState<boolean>(() => localStorage.getItem(PRIVACY_CONSENT_STORAGE_KEY) === 'true');
   const [loading, setLoading] = useState<boolean>(false);
   const [rememberMe, setRememberMe] = useState<boolean>(() => !!localStorage.getItem('saved_username'));
   const navigate = useNavigate();
@@ -104,7 +106,11 @@ const Login: React.FC = () => {
               type="checkbox" 
               id="consent"
               checked={consent}
-              onChange={(e) => setConsent(e.target.checked)}
+              onChange={(e) => {
+                const accepted = e.target.checked;
+                setConsent(accepted);
+                localStorage.setItem(PRIVACY_CONSENT_STORAGE_KEY, accepted ? 'true' : 'false');
+              }}
               disabled={loading}
             />
             <label className="form-check-label" htmlFor="consent" style={{ fontSize: '0.9rem' }}>

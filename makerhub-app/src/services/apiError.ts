@@ -45,11 +45,15 @@ export const normalizeApiError = (error: unknown): ApiError => {
   }
 
   if (status === 401) {
-    return createApiError('Sessão expirada. Faça login novamente.', 'UNAUTHORIZED', status, endpoint, details);
+    const isLoginEndpoint = String(endpoint || '').includes('/auth/login');
+    if (isLoginEndpoint) {
+      return createApiError('Usuario ou senha invalidos.', 'UNAUTHORIZED', status, endpoint, details);
+    }
+    return createApiError('Sessao expirada. Faca login novamente.', 'UNAUTHORIZED', status, endpoint, details);
   }
 
   if (status === 403) {
-    return createApiError('Acesso negado para esta operação.', 'FORBIDDEN', status, endpoint, details);
+    return createApiError('Acesso negado para esta operacao.', 'FORBIDDEN', status, endpoint, details);
   }
 
   if (status && status >= 500) {
@@ -57,17 +61,16 @@ export const normalizeApiError = (error: unknown): ApiError => {
   }
 
   if (!axiosError?.response) {
-    return createApiError('Falha de conexão com a API.', 'NETWORK_ERROR', undefined, endpoint, details);
+    return createApiError('Falha de conexao com a API.', 'NETWORK_ERROR', undefined, endpoint, details);
   }
 
-  return createApiError('Erro inesperado ao processar a requisição.', 'UNKNOWN_ERROR', status, endpoint, details);
+  return createApiError('Erro inesperado ao processar a requisicao.', 'UNKNOWN_ERROR', status, endpoint, details);
 };
 
-export const getApiErrorMessage = (error: unknown, fallback = 'Não foi possível concluir a operação.'): string => {
+export const getApiErrorMessage = (error: unknown, fallback = 'Nao foi possivel concluir a operacao.'): string => {
   const apiError = error as Partial<ApiError>;
   if (apiError?.isApiError && apiError.message) {
     return apiError.message;
   }
   return fallback;
 };
-
