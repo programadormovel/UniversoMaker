@@ -1,0 +1,620 @@
+Segue o prompt atualizado com a equipe multidisciplinar, uso das observações para construção do PEI, e-mail e WhatsApp já definidos, mantendo a estrutura institucional e técnica do documento original. 
+
+---
+
+# Prompt para criação da landing page — Projeto Universo Maker
+
+Crie uma **landing page institucional moderna, profissional, responsiva e visualmente impactante** para o **Projeto Universo Maker**, desenvolvido pela **TNT Solution — Tecnologia Inclusiva**.
+
+A página deve apresentar o Universo Maker como uma solução integrada de **tecnologia, inclusão escolar, acompanhamento multidisciplinar e desenvolvimento humano**, destinada a crianças e adolescentes neurodivergentes de 6 a 18 anos.
+
+Utilize os arquivos anexados:
+
+* Logo do Universo Maker;
+* Logo da TNT Solution;
+* Logos oficiais da Microsoft e da EPSON;
+* Fotografias e imagens da sala;
+* Imagens das atividades com alunos e profissionais;
+* Imagens do espaço de regulação sensorial.
+
+Mantenha uma identidade visual inspirada em universo, tecnologia, robótica, criatividade e inclusão, priorizando:
+
+* Azul-marinho;
+* Azul;
+* Verde;
+* Roxo;
+* Amarelo;
+* Branco.
+
+A comunicação deve transmitir **credibilidade, inovação, acolhimento, acessibilidade, segurança, impacto social e capacidade de expansão**.
+
+## Objetivo da página
+
+Apresentar o Universo Maker para:
+
+* Prefeituras e secretarias de Educação;
+* Redes municipais e estaduais de ensino;
+* Escolas públicas e privadas;
+* APAEs e instituições especializadas;
+* Institutos, fundações e organizações sociais;
+* Empresas parceiras e patrocinadoras;
+* Potenciais investidores;
+* Gestores educacionais;
+* Operadores e unidades licenciadas do projeto.
+
+---
+
+# Estrutura da landing page
+
+## 1. Cabeçalho
+
+Inserir o logo do Universo Maker no lado esquerdo.
+
+Criar um menu com os itens:
+
+* Início;
+* O Projeto;
+* Metodologia;
+* Equipe Multidisciplinar;
+* Estrutura;
+* Plataforma;
+* Parcerias;
+* Público-alvo;
+* Contato.
+
+Adicionar um botão destacado:
+
+**“Solicite uma apresentação”**
+
+O menu deve permanecer fixo durante a rolagem e transformar-se em menu hambúrguer em celulares.
+
+---
+
+## 2. Seção principal — Hero
+
+Utilizar uma das imagens mais impactantes da sala como plano de fundo, com uma camada escura translúcida que preserve a visualização da fotografia e melhore a leitura do texto.
+
+Título:
+
+**“Tecnologia, inclusão e desenvolvimento para transformar futuros.”**
+
+Texto de apoio:
+
+**“O Universo Maker integra robótica, programação, cultura maker, acompanhamento multidisciplinar e tecnologia educacional para promover aprendizagem, autonomia, inclusão e desenvolvimento de crianças e adolescentes neurodivergentes.”**
+
+Botões:
+
+* **Conheça o projeto**
+* **Agende uma apresentação**
+
+Adicionar indicadores visuais:
+
+* Educação inclusiva;
+* Robótica e programação;
+* Acompanhamento multidisciplinar;
+* Tecnologia assistiva;
+* PEI digital;
+* Comunicação com as famílias.
+
+---
+
+## 3. Seção — Conheça o Universo Maker
+
+Apresentar o Universo Maker como uma solução integrada composta por:
+
+* Sala tecnológica inclusiva;
+* Metodologia educacional própria;
+* Atividades de robótica e programação;
+* Cultura maker e aprendizagem prática;
+* Equipe multidisciplinar dentro da sala;
+* Apoio individualizado aos alunos;
+* Plataforma digital de gestão;
+* Plano Educacional Individualizado — PEI;
+* Avaliações e registros de evolução;
+* Relatórios de acompanhamento;
+* Aplicativo de comunicação com as famílias.
+
+Texto sugerido:
+
+**“Mais do que uma sala de tecnologia, o Universo Maker é um ecossistema de inclusão, aprendizagem e desenvolvimento. Cada atividade é planejada para respeitar o perfil, as potencialidades, as necessidades e o ritmo de aprendizagem de cada aluno.”**
+
+---
+
+## 4. Carrossel de imagens da sala
+
+Criar um **carrossel institucional grande, elegante e responsivo**, utilizando todas as imagens anexadas da sala do Universo Maker.
+
+O carrossel deve:
+
+* Exibir uma imagem principal por vez;
+* Possuir transições suaves;
+* Apresentar setas laterais;
+* Mostrar indicadores de navegação;
+* Permitir navegação por toque em celulares;
+* Permitir navegação pelo teclado;
+* Avançar automaticamente a cada cinco segundos;
+* Pausar quando o usuário posicionar o mouse sobre a imagem;
+* Abrir a fotografia em tela ampliada quando clicada;
+* Manter a proporção original das imagens;
+* Adaptar-se a diferentes formatos de fotografia;
+* Utilizar carregamento otimizado;
+* Possuir textos alternativos para acessibilidade.
+
+Adicionar legendas como:
+
+* **Ambiente inclusivo, moderno e acolhedor**
+* **Tecnologia integrada ao desenvolvimento humano**
+* **Espaço de robótica, programação e cultura maker**
+* **Regulação sensorial integrada à aprendizagem**
+* **Estrutura preparada para atividades colaborativas**
+* **Acompanhamento multidisciplinar durante as atividades**
+* **Acessibilidade e autonomia em todas as experiências**
+
+Não modificar as imagens, não aplicar filtros excessivos e não cortar elementos importantes da arquitetura, do mobiliário ou das atividades.
+
+---
+
+## 5. Seção — Como funciona
+
+Criar uma linha do tempo ou fluxo visual com seis etapas:
+
+### 1. Avaliação e acolhimento
+
+Identificação inicial do perfil, das necessidades, das potencialidades e dos interesses do aluno.
+
+### 2. Planejamento individualizado
+
+Definição de objetivos educacionais, tecnológicos e de desenvolvimento, considerando as necessidades específicas do aluno.
+
+### 3. Experiências maker
+
+Participação em atividades práticas de robótica, programação, criatividade, montagem de protótipos, experimentação e resolução de problemas.
+
+### 4. Observação multidisciplinar
+
+Durante as atividades, psicólogo, fonoaudiólogo e psicopedagogo acompanham os alunos dentro da sala, realizando observações técnicas sobre participação, comunicação, interação social, autonomia, aprendizagem e comportamento.
+
+### 5. Construção e atualização do PEI
+
+As observações e intervenções realizadas durante as atividades contribuem para a criação, atualização e acompanhamento do **Plano Educacional Individualizado — PEI**.
+
+### 6. Relatórios e comunicação
+
+As informações são registradas na plataforma e compartilhadas, conforme as permissões aplicáveis, com profissionais, instituições de ensino e famílias.
+
+---
+
+## 6. Seção — Metodologia MIMCA
+
+Apresentar a:
+
+**MIMCA — Metodologia Inclusiva Maker, Criativa e Ativa**
+
+Destacar os pilares da metodologia em cards com ícones:
+
+* Aprendizagem ativa;
+* Cultura maker;
+* Robótica educacional;
+* Programação;
+* Tecnologia assistiva;
+* Inclusão escolar;
+* Desenvolvimento socioemocional;
+* Personalização da aprendizagem;
+* Cooperação;
+* Autonomia;
+* Criatividade;
+* Resolução de problemas;
+* Acompanhamento multidisciplinar;
+* Produção de evidências para o PEI.
+
+Utilizar animações discretas quando os cards entrarem na tela.
+
+---
+
+## 7. Seção — Equipe multidisciplinar
+
+Criar uma seção específica para apresentar a equipe multidisciplinar do Universo Maker.
+
+Título:
+
+**“Tecnologia acompanhada por um olhar multidisciplinar.”**
+
+Texto principal:
+
+**“O Universo Maker oferece uma equipe multidisciplinar composta por psicólogo, fonoaudiólogo e psicopedagogo. Esses profissionais atuam dentro da sala, acompanhando as atividades de robótica, programação e cultura maker, realizando observações e intervenções individualizadas de acordo com as necessidades de cada aluno.”**
+
+Apresentar três cards:
+
+### Psicólogo
+
+Destacar sua atuação na observação de:
+
+* Comportamento;
+* Interação social;
+* Participação;
+* Regulação emocional;
+* Autonomia;
+* Resolução de desafios;
+* Relação com colegas e profissionais.
+
+### Fonoaudiólogo
+
+Destacar sua atuação na observação de:
+
+* Comunicação;
+* Linguagem;
+* Compreensão de orientações;
+* Expressão de ideias;
+* Interação comunicativa;
+* Uso de recursos de comunicação;
+* Participação em atividades colaborativas.
+
+### Psicopedagogo
+
+Destacar sua atuação na observação de:
+
+* Processos de aprendizagem;
+* Atenção;
+* Organização;
+* Planejamento;
+* Estratégias utilizadas pelo aluno;
+* Raciocínio lógico;
+* Resolução de problemas;
+* Necessidades de adaptação pedagógica.
+
+Adicionar o texto:
+
+**“As observações e intervenções realizadas pelos profissionais durante as atividades são registradas e utilizadas como evidências para apoiar a elaboração, atualização e acompanhamento do Plano Educacional Individualizado — PEI.”**
+
+Deixar claro que:
+
+* O acompanhamento ocorre durante experiências reais de aprendizagem;
+* A atuação não deve interromper a autonomia do aluno;
+* As intervenções devem ser acolhedoras e individualizadas;
+* As informações devem ser registradas com segurança;
+* O PEI deve ser elaborado com supervisão humana;
+* A participação da equipe deve respeitar as atribuições de cada profissão.
+
+---
+
+## 8. Seção — Público atendido
+
+Apresentar que o projeto atende crianças e adolescentes entre 6 e 18 anos, incluindo estudantes com:
+
+* Transtorno do Espectro Autista — TEA;
+* TDAH;
+* Deficiência intelectual;
+* Altas habilidades ou superdotação;
+* Dificuldades de aprendizagem;
+* Deficiências físicas;
+* Deficiências sensoriais;
+* Outros perfis de neurodivergência.
+
+Utilizar uma linguagem respeitosa, inclusiva e não estereotipada.
+
+Não utilizar imagens, textos ou ícones que infantilizem os participantes.
+
+---
+
+## 9. Seção — Estrutura tecnológica
+
+Criar cards apresentando os principais recursos:
+
+* Kits educacionais de robótica;
+* Sensores;
+* Motores;
+* Placas programáveis;
+* Peças de montagem;
+* Notebooks;
+* Tablets;
+* Projetor interativo;
+* Impressora;
+* Impressora 3D;
+* Espaço de regulação sensorial;
+* Recursos sensoriais;
+* Automação de iluminação;
+* Internet e rede estruturada;
+* Recursos de acessibilidade;
+* Plataforma digital integrada.
+
+---
+
+## 10. Seção — Plataforma Universo Maker
+
+Apresentar a plataforma digital desenvolvida pela TNT Solution.
+
+Destacar os módulos:
+
+* Cadastro e gestão de alunos;
+* Gestão de turmas;
+* Gestão de profissionais;
+* Avaliações;
+* Registros de observações;
+* Registros de intervenções;
+* Acompanhamento da evolução;
+* PEI digital;
+* Objetivos individualizados;
+* Trilhas de aprendizagem;
+* Planejamento de atividades;
+* Relatórios gerenciais;
+* Indicadores de desenvolvimento;
+* Aplicativo para famílias;
+* Comunicação institucional;
+* Controle de acesso;
+* Proteção de dados;
+* Recursos de inteligência artificial com supervisão humana.
+
+Explicar que os profissionais multidisciplinares poderão registrar suas observações durante as atividades e utilizar essas informações, dentro de suas atribuições, como apoio para:
+
+* Construção do PEI;
+* Atualização dos objetivos;
+* Definição de estratégias;
+* Registro da evolução;
+* Produção de relatórios;
+* Comunicação com a equipe e com as famílias.
+
+Informar que a solução considera:
+
+* Segurança;
+* Privacidade;
+* Acessibilidade;
+* Rastreabilidade;
+* Controle de permissões;
+* Supervisão humana;
+* Conformidade com a LGPD.
+
+---
+
+## 11. Seção — Parcerias estratégicas
+
+Criar uma área de alta credibilidade visual com os logos dos parceiros alinhados, com a mesma proporção e tratamento gráfico.
+
+### Microsoft
+
+Título:
+
+**“Microsoft — Tecnologia em nuvem, inovação e escalabilidade”**
+
+Texto:
+
+**“Por meio do ecossistema Microsoft for Startups, o Universo Maker utiliza recursos tecnológicos para hospedar, proteger, monitorar e ampliar sua plataforma digital. A infraestrutura Microsoft Azure contribui para a segurança, disponibilidade, escalabilidade e evolução tecnológica do projeto.”**
+
+Destacar:
+
+* Microsoft Azure;
+* Infraestrutura em nuvem;
+* Segurança e controle de acesso;
+* Armazenamento protegido;
+* Monitoramento;
+* Inteligência artificial;
+* Escalabilidade;
+* Apoio à inovação.
+
+### EPSON
+
+Título:
+
+**“EPSON — Tecnologia educacional e experiências interativas”**
+
+Texto:
+
+**“A parceria com a EPSON fortalece as experiências educacionais do Universo Maker por meio de tecnologias de projeção interativa, impressão e recursos visuais aplicados às aulas de programação, robótica e cultura maker.”**
+
+Destacar:
+
+* Projeção interativa;
+* Conteúdo educacional visual;
+* Aulas colaborativas;
+* Recursos de impressão;
+* Experiências imersivas;
+* Interação entre professor e alunos;
+* Apoio às atividades maker.
+
+Adicionar discretamente:
+
+**“As marcas e os logos dos parceiros devem ser utilizados conforme os materiais e as autorizações institucionais fornecidos.”**
+
+---
+
+## 12. Seção — Onde o projeto pode ser implantado
+
+Criar cards para:
+
+* Redes municipais de ensino;
+* Redes estaduais de ensino;
+* Escolas particulares;
+* APAEs;
+* Institutos;
+* Fundações;
+* Centros educacionais;
+* Organizações sociais;
+* Espaços de atendimento multidisciplinar;
+* Projetos de responsabilidade social;
+* Unidades licenciadas;
+* Unidades franqueadas.
+
+Texto:
+
+**“O Universo Maker possui uma estrutura modular, permitindo sua implantação e adaptação em diferentes instituições, municípios e contextos educacionais.”**
+
+---
+
+## 13. Seção — Benefícios
+
+Criar uma área com ícones destacando:
+
+* Ampliação da participação escolar;
+* Desenvolvimento da autonomia;
+* Estímulo ao raciocínio lógico;
+* Desenvolvimento da comunicação;
+* Aprendizagem por experiências práticas;
+* Fortalecimento do trabalho em equipe;
+* Acompanhamento individualizado;
+* Observações em contexto real de aprendizagem;
+* Integração entre tecnologia e equipe multidisciplinar;
+* Apoio à construção do PEI;
+* Integração entre escola, profissionais e família;
+* Formação tecnológica;
+* Produção de registros, indicadores e relatórios.
+
+Não inventar números, estatísticas, diagnósticos, resultados ou percentuais que não tenham sido fornecidos.
+
+---
+
+## 14. Seção — Chamada para ação
+
+Criar uma seção de grande impacto visual.
+
+Título:
+
+**“Leve o Universo Maker para sua instituição ou município.”**
+
+Texto:
+
+**“Conheça uma solução completa que conecta educação inclusiva, tecnologia, acompanhamento multidisciplinar, PEI digital e gestão integrada.”**
+
+Botões:
+
+* **Solicitar apresentação**
+* **Falar com a equipe**
+* **Conhecer possibilidades de implantação**
+
+Os botões de contato devem direcionar para:
+
+* WhatsApp: **(11) 98656-5779**
+* E-mail: **[diretor@tntsolution.com.br](mailto:diretor@tntsolution.com.br)**
+
+O link do WhatsApp deve utilizar o formato internacional:
+
+**5511986565779**
+
+Adicionar uma mensagem inicial automática no WhatsApp:
+
+**“Olá! Gostaria de receber mais informações e agendar uma apresentação do Projeto Universo Maker.”**
+
+---
+
+## 15. Formulário de contato
+
+Criar um formulário com os campos:
+
+* Nome;
+* Instituição ou empresa;
+* Cargo;
+* Município e estado;
+* Telefone;
+* E-mail;
+* Tipo de instituição;
+* Número estimado de alunos;
+* Interesse no projeto;
+* Mensagem.
+
+Adicionar a caixa de consentimento:
+
+**“Autorizo o uso dos meus dados para retorno de contato, conforme a Política de Privacidade.”**
+
+O formulário deve possuir:
+
+* Validação dos campos obrigatórios;
+* Máscara para telefone;
+* Proteção básica contra spam;
+* Mensagens de erro acessíveis;
+* Mensagem de confirmação após o envio;
+* Indicador visual durante o processamento;
+* Prevenção de envio duplicado.
+
+Os dados preenchidos no formulário devem ser enviados de forma funcional para:
+
+**[diretor@tntsolution.com.br](mailto:diretor@tntsolution.com.br)**
+
+O envio deve ser realizado por uma solução segura, como:
+
+* API própria;
+* Função serverless;
+* Serviço de formulários;
+* Back-end integrado ao site.
+
+Não utilizar apenas `mailto:` como mecanismo principal do formulário.
+
+Mensagem de confirmação:
+
+**“Mensagem enviada com sucesso. Nossa equipe entrará em contato em breve.”**
+
+Não exibir na página instruções técnicas, avisos ou textos informando que o e-mail ou o WhatsApp ainda precisam ser configurados.
+
+---
+
+## 16. Rodapé
+
+Inserir:
+
+* Logo do Universo Maker;
+* Logo da TNT Solution;
+* Links de navegação;
+* E-mail;
+* WhatsApp;
+* Redes sociais;
+* Política de Privacidade;
+* Termos de Uso;
+* Aviso de direitos autorais.
+
+Dados oficiais:
+
+**E-mail:** [diretor@tntsolution.com.br](mailto:diretor@tntsolution.com.br)
+**WhatsApp:** (11) 98656-5779
+
+O número do WhatsApp deve ser clicável.
+
+Texto:
+
+**“Universo Maker — Projeto, metodologia e plataforma desenvolvidos pela TNT Solution. Todos os direitos reservados.”**
+
+---
+
+# Requisitos técnicos
+
+A landing page deve:
+
+* Ser totalmente responsiva;
+* Funcionar em computadores, tablets e celulares;
+* Utilizar HTML5 semântico;
+* Possuir CSS moderno e organizado;
+* Utilizar JavaScript apenas quando necessário;
+* Ter componentes reutilizáveis;
+* Possuir menu fixo;
+* Ter navegação suave;
+* Incluir animações discretas;
+* Possuir boa velocidade de carregamento;
+* Otimizar as imagens;
+* Utilizar formatos modernos, como WebP, quando adequado;
+* Usar `lazy loading` no carrossel e nas imagens secundárias;
+* Seguir boas práticas de SEO;
+* Possuir título, descrição e metadados configurados;
+* Utilizar dados estruturados quando apropriado;
+* Possuir acessibilidade compatível com WCAG;
+* Ter contraste adequado;
+* Permitir navegação pelo teclado;
+* Incluir textos alternativos nas imagens;
+* Utilizar rótulos acessíveis nos formulários;
+* Evitar movimentos excessivos;
+* Respeitar a configuração de redução de movimento;
+* Ter botão flutuante de WhatsApp;
+* Utilizar o número **5511986565779** nos links de WhatsApp;
+* Utilizar o e-mail **[diretor@tntsolution.com.br](mailto:diretor@tntsolution.com.br)** nos contatos e no formulário;
+* Implementar envio funcional do formulário;
+* Não deixar dados de contato como placeholders;
+* Não exibir instruções de configuração para os visitantes;
+* Não exibir mensagens como “configure o WhatsApp”, “adicione seu e-mail” ou “conecte o formulário”;
+* Utilizar ícones profissionais;
+* Não utilizar textos genéricos em inglês;
+* Não inserir informações falsas;
+* Não inventar certificações, diagnósticos, parceiros ou resultados;
+* Não apresentar a inteligência artificial como substituta dos profissionais;
+* Manter supervisão humana na construção e atualização do PEI.
+
+A página poderá ser desenvolvida em:
+
+* HTML, CSS e JavaScript; ou
+* Next.js com React e componentes reutilizáveis.
+
+O resultado deve transmitir que o Universo Maker é uma iniciativa **sólida, escalável, tecnológica, inclusiva e preparada para implantação em instituições públicas e privadas**, integrando experiências maker, equipe multidisciplinar e gestão digital para apoiar o desenvolvimento e a construção do PEI.
