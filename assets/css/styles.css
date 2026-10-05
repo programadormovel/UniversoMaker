@@ -169,13 +169,11 @@ button { cursor: pointer; }
 .privacy-note p { max-width: 980px; margin: 0; }
 
 .partners-section { background: var(--soft); }
-.partners-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.partners-grid { display: grid; grid-template-columns: repeat(2, minmax(280px, 420px)); justify-content: center; gap: 20px; }
 .partner-card { display: flex; flex-direction: column; min-height: 440px; padding: 31px; border: 1px solid var(--border); border-radius: 25px; background: #fff; box-shadow: 0 14px 40px rgba(3,40,63,.07); }
 .partner-card.microsoft { border-top: 5px solid #00a4ef; }
-.partner-card.epson { border-top: 5px solid #0b3d91; }
 .partner-card.tnt { border-top: 5px solid var(--green); }
 .partner-name { min-height: 66px; display: flex; align-items: center; font-size: 2.1rem; font-weight: 850; letter-spacing: -.05em; color: #222; }
-.partner-card.epson .partner-name { color: #143e8f; letter-spacing: .03em; }
 .partner-card.tnt img { width: 100%; height: 66px; object-fit: contain; object-position: left center; }
 .partner-kicker { min-height: 50px; margin: 19px 0 10px; color: var(--navy-900); font-weight: 850; line-height: 1.3; }
 .partner-card > p:not(.partner-kicker) { color: var(--muted); }
